@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertis Website - Career Page</title>
+
+  <link rel="stylesheet" href="/dist/app.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+
+
+
+  <meta name="description" content="New Vertis Website">
+
+
+  <meta property="og:site_name" content="Vertis Website">
+  <meta property="og:title" content="Vertis Website">
+  <meta property="og:description" content="New Vertis Website">
+  <meta property="og:url" content="http://localhost:8080/pages/career/">
+  <meta property="og:locale" content="">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Career Page">
+  <meta name="twitter:description" content="New Vertis Website">
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: white">
+      <div class="container-fluid d-flex align-items-center justify-content-between"
+        style="border: 1px solid black; padding-left: 0px">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <img src="/assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="height: 40px" />
+        </a>
+
+        <!-- Navbar Toggler for Mobile -->
+        <div class="d-lg-none d-flex ms-auto align-items-center">
+          <button id="navbar-toggler" class="navbar-toggler border-start border-right" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <img id="navbar-toggler-icon" src="/assets/images/Hamburger.svg" alt="Menu" width="30" height="30" />
+          </button>
+          <!-- Get in Touch Icon -->
+          <a href="#" class="nav-link me-2 border-start" style="background-color: #1ce783; padding: 10px 12px">
+            <img src="/assets/images/Message.svg" alt="Message" width="30" height="30" />
+          </a>
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse border-start-nav" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="/pages/about/index.html" class="nav-link">ABOUT</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">WORKS</a></li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown position-static">
+              <a href="#" class="nav-link" id="vertisGroupDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                VERTIS GROUP
+                <img src="/assets/images/icons/24/Accordion-down.svg" alt="Dropdown Icon" id="dropdownIcon"
+                  class="dropdown-icon" />
+              </a>
+
+              <div class="dropdown-menu full-width-dropdown" aria-labelledby="vertisGroupDropdown">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Experience</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 1</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 2</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 3</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Technology</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 4</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 5</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 6</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Solutions</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Ventures</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="#" class="btn btn-success">View All Services</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-link">NEWS</a></li>
+            <li class="nav-item careers-link border-start-nav">
+              <a href="/pages/career/index.html" class="nav-link pl-3">CAREERS</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Get in Touch Button -->
+        <ul class="navbar-nav d-none d-lg-flex ms-auto">
+          <li class="nav-item border-start ms-3" style="background-color: #1ce783">
+            <a href="#" class="nav-link">GET IN TOUCH</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let dropdown = document.getElementById("vertisGroupDropdown");
+        let dropdownIcon = document.getElementById("dropdownIcon");
+        let dropdownMenu = dropdown.nextElementSibling;
+
+        dropdown.parentElement.addEventListener("mouseenter", function () {
+          dropdownIcon.src = "/assets/images/icons/24/Accordion-up.svg";
+          dropdownMenu.classList.add("show");
+          dropdown.setAttribute("aria-expanded", "true");
+        });
+
+        dropdown.parentElement.addEventListener("mouseleave", function () {
+          dropdownIcon.src = "/assets/images/icons/24/Accordion-down.svg";
+          dropdownMenu.classList.remove("show");
+          dropdown.setAttribute("aria-expanded", "false");
+        });
+
+        dropdown.addEventListener("click", function () {
+          window.location.href = "your-link.html"; // Navigate on second click
+        });
+      });
+    </script>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="py-lg-7">
+      <div class="career-hero-section">
+        <div class="career-hero-content px-3 px-md-">
+          <h1>Be a part of us <span class="highlight-dot">.</span></h1>
+          <p style="font-size: 16px;">At Vertis, we believe in pushing boundaries and challenging the status quo. We're
+            looking for passionate thinkers, creators, and doers who are ready to make a difference in the digital
+            world.
+            Whether you're a designer, developer, strategist, or storyteller, there's a place for you here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why vertis section -->
+    <section class="why-vertis py-5 px-5 px-sm-5">
+      <div class="container">
+        <div class="row">
+          <!-- Left Text Column -->
+          <div class="col-md-6">
+            <h1 class="mb-4">Why work at Vertis</h1>
+            <p class="lead">
+              At Vertis, innovation isn’t just a buzzword — it’s at the heart of everything we do. We challenge
+              conventions, rethink possibilities, and push boundaries to create meaningful solutions. Our culture
+              fosters
+              curiosity, encourages experimentation, and embraces bold ideas. Whether it’s through cutting-edge
+              technology, creative problem-solving, or forward-thinking strategies, we empower our teams to drive change
+              and make an impact. Here, you won’t just follow trends — you’ll set them.
+            </p>
+          </div>
+          <!-- Right Floating Pill Column -->
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <div class="pill-container">
+              <div class="pill mb-4">Innovative Culture</div>
+              <div class="pill mb-4">Growth Opportunities</div>
+              <div class="pill mb-4">Impactful Work</div>
+              <div class="pill">Inclusive Environment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jobs section -->
+    <section class="explore-jobs py-5 px-5 px-sm-5">
+      <div class="container">
+        <!-- Search bar and filters -->
+        <div class="row mb-5">
+          <h3 class="mb-4">Explore our current openings and find the role that’s right for you.</h3>
+          <div class="col-md-6 col-12 mb-3 mb-md-0 mt-2">
+            <div class="input-group">
+              <input type="text" class="form-control-search" placeholder="Search">
+              <span class="input-group-text">
+                <img src="/assets/images/icons/24/Search.svg">
+              </span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap col-md-6 col-12 gap-2">
+            <div class="col-md-4 col-4 mb-3">
+              <select class="form-select">
+                <option selected>All countries</option>
+                <option value="1">Singapore</option>
+                <option value="2">USA</option>
+                <option value="3">UK</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-4 mb-3">
+              <select class="form-select">
+                <option selected>All roles</option>
+                <option value="1">UI/UX Designer</option>
+                <option value="2">Frontend Developer</option>
+                <option value="3">Backend Developer</option>
+              </select>
+            </div>
+
+            <div class="col-md-3 col-3 mb-3">
+              <div class=" justify-content-center pt-1">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="btnradio1">
+                    <img src="/assets/images/icons/24/listing.svg" alt="list" style="border: 1px solid;
+                  border-radius: 10px;
+                  padding: 2px;">
+                  </label>
+
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="btnradio3">
+                    <img src="/assets/images/icons/24/card.svg" alt="grid" style="border: 1px solid;
+                  border-radius: 10px;
+                  padding: 2px;">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid layout -->
+        <div>
+          <div class="row">
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24//location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
+              <div class="job-card">
+                <div class="job-title">UI/UX Designer</div>
+                <div class="d-flex align-items-center">
+                  <span class="job-location"><img src="/assets/images/icons/24/location.svg"> Singapore</span>
+                  <span class="job-type"><img src="/assets/images/icons/24/time.svg"> Full-time</span>
+                </div>
+                <div class="job-description">
+                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                  goals.
+                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                  products...
+                </div>
+                <button class="apply-now-btn">
+                  Apply now <span class="apply-now-btn-icon"><img
+                      src="/assets/images/icons/24/Arrow Diagonal.svg"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- List layout -->
+        <div>
+          <div class="row mt-5">
+            <hr />
+            <!-- Job Card 1 -->
+            <div class="job-card-list mt-2">
+              <div class="row">
+                <div class="col-md-5 mt-4">
+                  <div class="job-title-list ">UI/UX Designer</div>
+                  <div class="d-flex align-items-center">
+                    <span class="job-location"><img src="/assets/images/icons/24/location.svg" alt="Location Icon">
+                      Singapore</span>
+                    <span class="job-type"><img src="/assets/images/icons/24/time.svg" alt="Time Icon"> Full-time</span>
+                  </div>
+                </div>
+                <div class="col-md-7 mt-4 mb-4">
+                  <div class="job-description mb-4">
+                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                    goals.
+                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                    products...
+                  </div>
+                  <button class="apply-now-btn">
+                    Apply now <span class="apply-now-btn-icon"><img src="/assets/images/icons/24/Arrow Diagonal.svg"
+                        alt="Arrow Icon"></span>
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+            <hr />
+            <div class="job-card-list mt-2">
+              <div class="row">
+                <div class="col-md-5 mt-4">
+                  <div class="job-title-list ">UI/UX Designer</div>
+                  <div class="d-flex align-items-center">
+                    <span class="job-location"><img src="/assets/images/icons/24/location.svg" alt="Location Icon">
+                      Singapore</span>
+                    <span class="job-type"><img src="/assets/images/icons/24/time.svg" alt="Time Icon"> Full-time</span>
+                  </div>
+                </div>
+                <div class="col-md-7 mt-4 mb-4">
+                  <div class="job-description mb-4">
+                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                    goals.
+                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                    products...
+                  </div>
+                  <button class="apply-now-btn">
+                    Apply now <span class="apply-now-btn-icon"><img src="/assets/images/icons/24/Arrow Diagonal.svg"
+                        alt="Arrow Icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="job-card-list mt-2">
+              <div class="row">
+                <div class="col-md-5 mt-4">
+                  <div class="job-title-list ">UI/UX Designer</div>
+                  <div class="d-flex align-items-center">
+                    <span class="job-location"><img src="/assets/images/icons/24/location.svg" alt="Location Icon">
+                      Singapore</span>
+                    <span class="job-type"><img src="/assets/images/icons/24/time.svg" alt="Time Icon"> Full-time</span>
+                  </div>
+                </div>
+                <div class="col-md-7 mt-4 mb-4">
+                  <div class="job-description mb-4">
+                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
+                    goals.
+                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
+                    products...
+                  </div>
+                  <button class="apply-now-btn">
+                    Apply now <span class="apply-now-btn-icon"><img src="/assets/images/icons/24/Arrow Diagonal.svg"
+                        alt="Arrow Icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <!-- Pagination -->
+          <div class="pagination-custom mt-5">
+            <button class="pagination-arrow">&larr;</button>
+            <button class="pagination-page active-page">1</button>
+            <button class="pagination-page">2</button>
+            <button class="pagination-page">3</button>
+            <span>...</span>
+            <button class="pagination-page">10</button>
+            <button class="pagination-arrow">&rarr;</button>
+          </div>
+
+          <!-- Pagination Info -->
+          <div class="pagination-info pb-5">
+            Showing 9 of 40 results
+          </div>
+
+        </div>
+    </section>
+
+    <!-- Email us section -->
+    <section class="py-0">
+      <div class="container-fluid email-us-section">
+        <h1>Don’t see a role that fits?</h1>
+        <p>We’re always on the lookout for exceptional talent. Send us your resume and let’s start a conversation.</p>
+        <button class="apply-now-btn">
+          Email us <span class="apply-now-btn-icon"><img src="/assets/images/icons/24/Arrow Diagonal.svg"
+              alt="Arrow Icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- FAQ  section -->
+    <section class="py-5 px-5 px-sm-5 faq-section">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-4">
+            <h2 class="faq-header mb-5 text-start">You've got questions, we've got<span> answers</span></h2>
+          </div>
+          <div class="col-md-8">
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <span class="muted-text">01</span> &nbsp; What’s the company culture like?
+                    <img src="/assets/images/icons/24/Plus.svg" class="accordion-icon accordion-plus-icon"
+                      alt="Plus Icon">
+                    <img src="/assets/images/icons/24/Minus.svg" class="accordion-icon accordion-minus-icon"
+                      alt="Minus Icon">
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    At Vertis, we thrive on creativity, collaboration, and pushing boundaries. We believe in fostering
+                    an
+                    environment where new ideas are welcomed, teamwork is valued, and professional growth is supported.
+                    Whether you’re a designer, developer, or strategist, you’ll be part of a team that challenges the
+                    status quo and delivers meaningful work.
+                  </div>
+                </div>
+                <hr />
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="muted-text">02</span> &nbsp; What’s the hiring process like at Vertis?
+                    <img src="/assets/images/icons/24/Plus.svg" class="accordion-icon accordion-plus-icon"
+                      alt="Plus Icon">
+                    <img src="/assets/images/icons/24/Minus.svg" class="accordion-icon accordion-minus-icon"
+                      alt="Minus Icon">
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    At Vertis, we thrive on creativity, collaboration, and pushing boundaries. We believe in fostering
+                    an
+                    environment where new ideas are welcomed, teamwork is valued, and professional growth is supported.
+                    Whether you’re a designer, developer, or strategist, you’ll be part of a team that challenges the
+                    status quo and delivers meaningful work.
+                  </div>
+                </div>
+                <hr />
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="muted-text">03</span> &nbsp; What growth opportunities are available?
+                    <img src="/assets/images/icons/24/Plus.svg" class="accordion-icon accordion-plus-icon"
+                      alt="Plus Icon">
+                    <img src="/assets/images/icons/24/Minus.svg" class="accordion-icon accordion-minus-icon"
+                      alt="Minus Icon">
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    At Vertis, we thrive on creativity, collaboration, and pushing boundaries. We believe in fostering
+                    an
+                    environment where new ideas are welcomed, teamwork is valued, and professional growth is supported.
+                    Whether you’re a designer, developer, or strategist, you’ll be part of a team that challenges the
+                    status quo and delivers meaningful work.
+                  </div>
+                </div>
+                <hr />
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <span class="muted-text">04</span> &nbsp; How can I stand out in my application?
+                    <img src="/assets/images/icons/24/Plus.svg" class="accordion-icon accordion-plus-icon"
+                      alt="Plus Icon">
+                    <img src="/assets/images/icons/24/Minus.svg" class="accordion-icon accordion-minus-icon"
+                      alt="Minus Icon">
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    At Vertis, we thrive on creativity, collaboration, and pushing boundaries. We believe in fostering
+                    an
+                    environment where new ideas are welcomed, teamwork is valued, and professional growth is supported.
+                    Whether you’re a designer, developer, or strategist, you’ll be part of a team that challenges the
+                    status quo and delivers meaningful work.
+                  </div>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid" style="margin-left: 0px; margin-right: 0px">
+      <div class="row" style="">
+        <div class="col-md-3 col-sm-3 footer-logo">
+          <div class="footer-column">
+            <img src="/assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="padding-bottom: 110px" />
+            <p>12 Keong Saik Rd<br />#02-00<br />Singapore 089119</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px; padding-bottom: 50px">
+          <div class="footer-column">
+            <h5>MENU</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>IN THE LOOP</h5>
+            <ul>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Press Releases</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>CAREERS</h5>
+            <ul>
+              <li><a href="#">Apply for a Job</a></li>
+              <li><a href="#">Get in Touch</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Links -->
+    <div class="footer-bottom d-flex align-items-center justify-content-between border-top border-dark">
+      <div class="container-fluid">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-8 mb-0 mb-md-0" style="
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+                padding-left: 70px;
+              ">
+            <p class="m-2 ml-2">
+              Reach us at
+              <a href="mailto:info@vertis.digital">info@vertis.digital</a>
+            </p>
+          </div>
+
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 1</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 2</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 3</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end" style="
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+                background-color: #1ce783;
+              ">
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center d-block w-100">
+              <img src="/assets/images/Arrow-Up.svg" alt="Back to Top" style="width: 20px; height: 20px" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- End -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script type="text/javascript" src="/dist/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</body>
+
+</html>

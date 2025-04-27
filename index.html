@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertis Website - Homepage</title>
+
+  <link rel="stylesheet" href="/dist/app.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+
+
+
+  <meta name="description" content="New Vertis Website">
+
+
+  <meta property="og:site_name" content="Vertis Website">
+  <meta property="og:title" content="Vertis Website">
+  <meta property="og:description" content="New Vertis Website">
+  <meta property="og:url" content="http://localhost:8080/">
+  <meta property="og:locale" content="">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Homepage">
+  <meta name="twitter:description" content="New Vertis Website">
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: white">
+      <div class="container-fluid d-flex align-items-center justify-content-between"
+        style="border: 1px solid black; padding-left: 0px">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <img src="/assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="height: 40px" />
+        </a>
+
+        <!-- Navbar Toggler for Mobile -->
+        <div class="d-lg-none d-flex ms-auto align-items-center">
+          <button id="navbar-toggler" class="navbar-toggler border-start border-right" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <img id="navbar-toggler-icon" src="/assets/images/Hamburger.svg" alt="Menu" width="30" height="30" />
+          </button>
+          <!-- Get in Touch Icon -->
+          <a href="#" class="nav-link me-2 border-start" style="background-color: #1ce783; padding: 10px 12px">
+            <img src="/assets/images/Message.svg" alt="Message" width="30" height="30" />
+          </a>
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse border-start-nav" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="/pages/about/index.html" class="nav-link">ABOUT</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">WORKS</a></li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown position-static">
+              <a href="#" class="nav-link" id="vertisGroupDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                VERTIS GROUP
+                <img src="/assets/images/icons/24/Accordion-down.svg" alt="Dropdown Icon" id="dropdownIcon"
+                  class="dropdown-icon" />
+              </a>
+
+              <div class="dropdown-menu full-width-dropdown" aria-labelledby="vertisGroupDropdown">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Experience</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 1</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 2</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 3</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Technology</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 4</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 5</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 6</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Solutions</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Ventures</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="#" class="btn btn-success">View All Services</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-link">NEWS</a></li>
+            <li class="nav-item careers-link border-start-nav">
+              <a href="/pages/career/index.html" class="nav-link pl-3">CAREERS</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Get in Touch Button -->
+        <ul class="navbar-nav d-none d-lg-flex ms-auto">
+          <li class="nav-item border-start ms-3" style="background-color: #1ce783">
+            <a href="#" class="nav-link">GET IN TOUCH</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let dropdown = document.getElementById("vertisGroupDropdown");
+        let dropdownIcon = document.getElementById("dropdownIcon");
+        let dropdownMenu = dropdown.nextElementSibling;
+
+        dropdown.parentElement.addEventListener("mouseenter", function () {
+          dropdownIcon.src = "/assets/images/icons/24/Accordion-up.svg";
+          dropdownMenu.classList.add("show");
+          dropdown.setAttribute("aria-expanded", "true");
+        });
+
+        dropdown.parentElement.addEventListener("mouseleave", function () {
+          dropdownIcon.src = "/assets/images/icons/24/Accordion-down.svg";
+          dropdownMenu.classList.remove("show");
+          dropdown.setAttribute("aria-expanded", "false");
+        });
+
+        dropdown.addEventListener("click", function () {
+          window.location.href = "your-link.html"; // Navigate on second click
+        });
+      });
+    </script>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="py-lg-7">
+      <div class="hero-section">
+        <div class="container hero-content px-3 px-md-">
+          <h1>Crafting <span class="highlighted-text">experiences</span></h1>
+          <h1>
+            to help brands stand out in the digital age<span class="highlight-dot">.</span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row mb-5 text-md-start">
+          <div class="col-md-4">
+            <h6 class="section-title">ABOUT US</h6>
+          </div>
+          <div class="col-md-8">
+            <h2 class="pb-4 about-description">
+              We’re a dynamic team of creatives, strategists, and technologists
+              driven to deliver digital solutions that elevate brands and make
+              an impact.
+            </h2>
+            <a href="#" class="green-button">Learn more</a>
+          </div>
+        </div>
+
+        <div class="row text-md-start gy-4">
+          <div class="col-md-4">
+            <div class="news-divider"></div>
+            <p class="metric-label">Projects completed</p>
+            <h1 class="display-4">57</h1>
+          </div>
+          <div class="col-md-4">
+            <div class="news-divider"></div>
+            <p class="metric-label">Countries</p>
+            <h1 class="display-4">4</h1>
+          </div>
+          <div class="col-md-4">
+            <div class="news-divider"></div>
+            <p class="metric-label">People on the team</p>
+            <h1 class="display-4">128</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertis Group -->
+    <section class="bg-light" style="background-color: #242424 !important">
+      <div class="container-fluid my-3 my-md-7" style="padding: 0px">
+        <div class="">
+          <div class="tile" id="tile-1">
+            <div class="container">
+              <div class="tile-content">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="tile-title">Vertis Group</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile tile-1">
+            <div class="tile-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-5">
+                    <h6 class="tile-number">01</h6>
+                    <h3 class="tile-title">Vertis Experience</h3>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systemssssss</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="#" class="tile-link"><img src="./assets/images/icons/Arrow-Diagonal.svg" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tile tile-2">
+            <div class="tile-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-5">
+                    <h6 class="tile-number">02</h6>
+                    <h3 class="tile-title">Vertis Solutions</h3>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="#" class="tile-link"><img src="./assets/images/icons/Arrow-Diagonal.svg" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile tile-3">
+            <div class="tile-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-5">
+                    <h6 class="tile-number">03</h6>
+                    <h3 class="tile-title">Vertis Technology</h3>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="#" class="tile-link"><img src="./assets/images/icons/Arrow-Diagonal.svg" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile tile-4">
+            <div class="tile-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-5">
+                    <h6 class="tile-number">04</h6>
+                    <h3 class="tile-title">Vertis Ventures</h3>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="tile-description">
+                      <ul class="list-unstyled">
+                        <li>Infrastructure consult</li>
+                        <li>Hosting solutions</li>
+                        <li>Implementation</li>
+                        <li>Security solutions</li>
+                        <li>ERP systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="#" class="tile-link"><img src="./assets/images/icons/Arrow-Diagonal.svg" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="works-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h6 class="section-title">FEATURED WORKS</h6>
+          </div>
+          <div class="col-md-8">
+            <h2 class="works-description">
+              We tackle the tough stuff, rethink the norm, and deliver results
+              that challenge the status quo.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container-fluid p-0">
+        <div class="">
+          <div class="overlay"></div>
+          <div class="row">
+            <div class="col-md-12"
+              style="background: url('./assets/images/banner3.jpeg') no-repeat center center/cover;">
+              <div class="container">
+                <div class="project-card">
+                  <div class="project-content">
+                    <h2>Marina Bay Sands</h2>
+                    <p>
+                      Digital strategy <span class="stroke">|</span> UI/UX
+                      <span class="stroke">|</span> Branding
+                    </p>
+                  </div>
+                  <a href="#" class="white-transparent-button">View &nbsp;
+                    <img src="./assets/images/icons/Arrow-Diagonal.svg" style="width: 24px; height: 24px" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12"
+              style="background: url('./assets/images/banner2.png') no-repeat center center/cover;">
+              <div class="container">
+                <div class="project-card">
+                  <div class="project-content">
+                    <h2>Marina Bay Sands</h2>
+                    <p>
+                      Digital strategy <span class="stroke">|</span> UI/UX
+                      <span class="stroke">|</span> Branding
+                    </p>
+                  </div>
+                  <a href="#" class="white-transparent-button">View &nbsp;
+                    <img src="./assets/images/icons/Arrow-Diagonal.svg" style="width: 24px; height: 24px" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12"
+              style="background: url('./assets/images/banner1.jpeg') no-repeat center center/cover;">
+              <div class="container">
+                <div class="project-card">
+                  <div class="project-content">
+                    <h2>Marina Bay Sands</h2>
+                    <p>
+                      Digital strategy <span class="stroke">|</span> UI/UX
+                      <span class="stroke">|</span> Branding
+                    </p>
+                  </div>
+                  <a href="#" class="white-transparent-button">View &nbsp;
+                    <img src="./assets/images/icons/Arrow-Diagonal.svg" style="width: 24px; height: 24px" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5 my-md-7">
+        <div class="col-12 d-flex justify-content-center">
+          <button class="black-transparent-button">
+            <span>View all</span>
+            <img src="./assets/images/icons/icon-trailing-swap.svg">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section" style="background-color: #f1f1f1">
+      <div class="container pt-3">
+        <h2 class="middle-title">Our Clients</h2>
+        <div class="">
+          <div class="marquee">
+            <!-- Repeatable client logos -->
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 1" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 2" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 3" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 4" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 5" class="img-fluid" />
+            </div>
+            <!-- Additional logos for marquee effect -->
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 6" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 7" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 8" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 9" class="img-fluid" />
+            </div>
+            <div class="client-logo">
+              <img src="https://placehold.co/600x400" alt="Client 10" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <h5 class="section-title">Testimonials</h5>
+              <div class="buttons">
+                <div class="nav-buttons mt-4">
+                  <button class="nav-button prev-btn">
+                    <img src="./assets/images/icons/24/Arrow-Left.svg" alt="Previous" />
+                  </button>
+                  <button class="nav-button next-btn">
+                    <img src="./assets/images//icons/24/Arrow-Right.svg" alt="Next" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <h2 class="pb-5 testimonial-description">
+                Don't just take our word for it — hear from our clients who’ve
+                experienced the impact of our solutions firsthand.
+              </h2>
+              <div class="testimonial-slider-wrapper">
+                <div class="testimonial-slider">
+                  <div class="testimonial-card">
+                    <div class="quote-icon">
+                      <img src="./assets/images/icons/speech.svg" alt="Quote Icon" />
+                    </div>
+                    <p class="testimonial-text">
+                      Vertis consistently exceeds our expectations in usability
+                      testing, with expertly designed plans, efficient
+                      execution, and a commitment to excellence.
+                    </p>
+                    <p class="testimonial-author">Zoe Ming, UX Designer</p>
+                    <p class="testimonial-role">Dell</p>
+                  </div>
+
+                  <div class="testimonial-card">
+                    <div class="quote-icon">
+                      <img src="./assets/images/icons/speech.svg" alt="Quote Icon" />
+                    </div>
+                    <p class="testimonial-text">
+                      Their quick turnaround doesn’t compromise quality, and
+                      their thorough follow-up shows dedication to client
+                      satisfaction.
+                    </p>
+                    <p class="testimonial-author">Zoe Ming, UX Designer</p>
+                    <p class="testimonial-role">Dell</p>
+                  </div>
+                  <div class="testimonial-card">
+                    <div class="quote-icon">
+                      <img src="./assets/images/icons/speech.svg" alt="Quote Icon" />
+                    </div>
+                    <p class="testimonial-text">
+                      Vertis is an invaluable partner. Their commitment to
+                      excellence sets them apart from the rest.Vertis is an
+                      invaluable partner. Their commitment to excellence sets
+                      them apart from the rest.Vertis is an invaluable partner.
+                      Their commitment to excellence sets them apart from the
+                      rest.Vertis is an invaluable partner. Their commitment to
+                      excellence sets them apart from the rest.Vertis is an
+                      invaluable partner. Their commitment to excellence sets
+                      them apart from the rest.Vertis is an invaluable partner.
+                      Their commitment to excellence sets them apart from the
+                      rest.Vertis is an invaluable partner. Their commitment to
+                      excellence sets them apart from the rest.Vertis is an
+                      invaluable partner. Their commitment to excellence sets
+                      them apart from the rest.Vertis is an invaluable partner.
+                      Their commitment to excellence sets them apart from the
+                      rest.Vertis is an invaluable partner. Their commitment to
+                      excellence sets them apart from the rest.Vertis is an
+                      invaluable partner. Their commitment to excellence sets
+                      them apart from the rest.Vertis is an invaluable partner.
+                      Their commitment to excellence sets them apart from the
+                      rest.
+                    </p>
+                    <p class="testimonial-author">Zoe Ming, UX Designer</p>
+                    <p class="testimonial-role">Dell</p>
+                  </div>
+                  <!-- Add more testimonials as needed -->
+                  <div class="testimonial-card">
+                    <div class="quote-icon">
+                      <img src="./assets/images/icons/speech.svg" alt="Quote Icon" />
+                    </div>
+                    <p class="testimonial-text">This company is amazing!</p>
+                    <p class="testimonial-author">John Doe, Project Manager</p>
+                    <p class="testimonial-role">Microsoft</p>
+                  </div>
+                  <div class="testimonial-card">
+                    <div class="quote-icon">
+                      <img src="./assets/images/icons/speech.svg" alt="Quote Icon" />
+                    </div>
+                    <p class="testimonial-text">
+                      Highly recommended! They are truly committed to their
+                      clients and their work is excellent.
+                    </p>
+                    <p class="testimonial-author">
+                      Alice Smith, Lead Developer
+                    </p>
+                    <p class="testimonial-role">Google</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 col-md-4">
+            <h6 class="section-title">NEWS</h6>
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="news-description">
+              Stay updated on our latest projects, achievements, and events<span class="highlight-dot">.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-4 mb-4 news-column">
+            <div class="news-divider"></div>
+            <p class="news-date">January 15, 2024</p>
+            <p class="news-title-text">
+              Vertis Team Member Wins Sitecore Most Valuable Professional Award
+            </p>
+            <a href="#" class="learn-more">Learn more</a>
+            <div class="news-divider mt-5"></div>
+          </div>
+          <div class="col-12 col-md-4 mb-4 news-column">
+            <div class="news-divider"></div>
+            <p class="news-date">January 15, 2024</p>
+            <p class="news-title-text">Vertis Team Member Wins Sitecore</p>
+            <a href="#" class="learn-more">Learn more</a>
+            <div class="news-divider mt-5"></div>
+          </div>
+          <div class="col-12 col-md-4 mb-4 news-column">
+            <div class="news-divider"></div>
+            <p class="news-date">January 15, 2024</p>
+            <p class="news-title-text">
+              Vertis Team Member Wins Sitecore Most Valuable Professional Award
+              Award Award
+            </p>
+            <a href="#" class="learn-more">Learn more</a>
+            <div class="news-divider mt-5"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4 mb-4"></div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="mt-4">
+              <a href="#" class="green-button">View all</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <h6 class="section-title">CONTACT</h6>
+          </div>
+          <div class="col-12 col-md-9">
+            <h2 class="contact-heading pb-5">
+              This is the part where you get in touch and we make wonderful
+              things happen<span>.</span>
+            </h2>
+            <form>
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <input type="text" class="form-control" placeholder="Name" required />
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <input type="email" class="form-control" placeholder="Email" required />
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-6">
+                  <div class="placeholder-wrapper">
+                    <input type="text" class="form-control" placeholder="Company" required />
+                    <span class="star">*</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Country/Region" />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <textarea class="form-control" rows="1" placeholder="Message" required></textarea>
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-start mt-4">
+                <button type="submit" class="white-transparent-button-with-icon">
+                  <span>Submit</span>
+                  <img src="./assets/images/icons/icon-trailing-swap.svg" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid" style="margin-left: 0px; margin-right: 0px">
+      <div class="row" style="">
+        <div class="col-md-3 col-sm-3 footer-logo">
+          <div class="footer-column">
+            <img src="/assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="padding-bottom: 110px" />
+            <p>12 Keong Saik Rd<br />#02-00<br />Singapore 089119</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px; padding-bottom: 50px">
+          <div class="footer-column">
+            <h5>MENU</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>IN THE LOOP</h5>
+            <ul>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Press Releases</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>CAREERS</h5>
+            <ul>
+              <li><a href="#">Apply for a Job</a></li>
+              <li><a href="#">Get in Touch</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Links -->
+    <div class="footer-bottom d-flex align-items-center justify-content-between border-top border-dark">
+      <div class="container-fluid">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-8 mb-0 mb-md-0" style="
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+                padding-left: 70px;
+              ">
+            <p class="m-2 ml-2">
+              Reach us at
+              <a href="mailto:info@vertis.digital">info@vertis.digital</a>
+            </p>
+          </div>
+
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 1</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 2</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
+            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
+            <a href="#" class="d-block w-100 text-center px-3">Link 3</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end" style="
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+                background-color: #1ce783;
+              ">
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center d-block w-100">
+              <img src="/assets/images/Arrow-Up.svg" alt="Back to Top" style="width: 20px; height: 20px" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- End -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script type="text/javascript" src="/dist/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</body>
+
+</html>
