@@ -11,29 +11,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-
-
-
-
   <meta name="description" content="New Vertis Website">
-
-
   <meta property="og:site_name" content="Vertis Website">
   <meta property="og:title" content="Vertis Website">
   <meta property="og:description" content="New Vertis Website">
   <meta property="og:url" content="http://localhost:8080/">
   <meta property="og:locale" content="">
-
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Homepage">
-  <meta name="twitter:description" content="New Vertis Website">
-
-
-
-
-
-
 
 
 </head>
@@ -45,11 +28,11 @@
 
   <!-- Navbar -->
   <header>
-    <nav class="navbar navbar-expand-lg" style="background-color: white">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid d-flex align-items-center justify-content-between"
         style="border: 1px solid black; padding-left: 0px">
         <!-- Logo -->
-        <a href="./index.html" class="navbar-brand">
+        <a href="#" class="navbar-brand">
           <img src="./assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="height: 40px" />
         </a>
 
@@ -70,12 +53,11 @@
         <div class="collapse navbar-collapse border-start-nav" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a href="./pages/about/index.html" class="nav-link">ABOUT</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">WORKS</a></li>
 
             <!-- Dropdown -->
             <li class="nav-item dropdown position-static">
-              <a href="#" class="nav-link" id="vertisGroupDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                VERTIS GROUP
+              <a href="./pages/group/index.html" class="nav-link" id="vertisGroupDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">GROUP
                 <img src="./assets/images/icons/24/Accordion-down.svg" alt="Dropdown Icon" id="dropdownIcon"
                   class="dropdown-icon" />
               </a>
@@ -84,19 +66,22 @@
                 <div class="dropdown-content">
                   <div class="dropdown-column">
                     <h6><a href="#">Vertis Experience</a></h6>
-                    <a href="#" class="dropdown-column-sublinks">Service 1</a>
+                    <a href="./pages//individual-article/index.html" class="dropdown-column-sublinks">Individual
+                      Article</a>
                     <a href="#" class="dropdown-column-sublinks">Service 2</a>
                     <a href="#" class="dropdown-column-sublinks">Service 3</a>
                   </div>
                   <div class="dropdown-column">
                     <h6><a href="#">Vertis Technology</a></h6>
-                    <a href="#" class="dropdown-column-sublinks">Service 4</a>
+                    <a href="./pages/individual-project/index.html" class="dropdown-column-sublinks">Individual
+                      Project</a>
                     <a href="#" class="dropdown-column-sublinks">Service 5</a>
                     <a href="#" class="dropdown-column-sublinks">Service 6</a>
                   </div>
                   <div class="dropdown-column">
                     <h6><a href="#">Vertis Solutions</a></h6>
-                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="./pages/individual-pillar/index.html" class="dropdown-column-sublinks">Individual
+                      Pillar</a>
                     <a href="#" class="dropdown-column-sublinks">Service 11</a>
                     <a href="#" class="dropdown-column-sublinks">Service 12</a>
                   </div>
@@ -108,12 +93,13 @@
                   </div>
                 </div>
                 <div class="dropdown-footer">
-                  <a href="#" class="btn btn-success">View All Services</a>
+                  <a href="#" class="btn btn-success">View Vertis Group</a>
                 </div>
               </div>
             </li>
 
-            <li class="nav-item"><a href="#" class="nav-link">NEWS</a></li>
+            <li class="nav-item"><a href="./pages/works/index.html" class="nav-link">WORKS</a></li>
+            <li class="nav-item"><a href="./pages/news/index.html" class="nav-link">NEWS</a></li>
             <li class="nav-item careers-link border-start-nav">
               <a href="./pages/career/index.html" class="nav-link pl-3">CAREERS</a>
             </li>
@@ -128,48 +114,24 @@
         </ul>
       </div>
     </nav>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let dropdown = document.getElementById("vertisGroupDropdown");
-        let dropdownIcon = document.getElementById("dropdownIcon");
-        let dropdownMenu = dropdown.nextElementSibling;
-
-        dropdown.parentElement.addEventListener("mouseenter", function () {
-          dropdownIcon.src = "./assets/images/icons/24/Accordion-up.svg";
-          dropdownMenu.classList.add("show");
-          dropdown.setAttribute("aria-expanded", "true");
-        });
-
-        dropdown.parentElement.addEventListener("mouseleave", function () {
-          dropdownIcon.src = "./assets/images/icons/24/Accordion-down.svg";
-          dropdownMenu.classList.remove("show");
-          dropdown.setAttribute("aria-expanded", "false");
-        });
-
-        dropdown.addEventListener("click", function () {
-          window.location.href = "your-link.html"; // Navigate on second click
-        });
-      });
-    </script>
   </header>
 
   <main id="main">
 
     <!-- Hero Section -->
-    <section class="py-lg-7">
+    <section class="homepage-hero-section py-lg-7">
       <div class="hero-section">
         <div class="container hero-content px-3 px-md-">
           <h1>Crafting <span class="highlighted-text">experiences</span></h1>
           <h1>
-            to help brands stand out in the digital age<span class="highlight-dot">.</span>
+            at the collision point of creativity and tech<span class="highlight-dot">.</span>
           </h1>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="homepage about-section">
       <div class="container">
         <div class="row mb-5 text-md-start">
           <div class="col-md-4">
@@ -177,11 +139,11 @@
           </div>
           <div class="col-md-8">
             <h2 class="pb-4 about-description">
-              We’re a dynamic team of creatives, strategists, and technologists
-              driven to deliver digital solutions that elevate brands and make
-              an impact.
+              Vertis is where tech doesn’t just meet creative, it collides with it. We build digital that makes people
+              stop, stare,
+              and stick. With a dynamic team of creatives, strategists and technologists working together.
             </h2>
-            <a href="#" class="green-button">Learn more</a>
+            <a href="#" class="green-button">Let’s Go</a>
           </div>
         </div>
 
@@ -386,13 +348,13 @@
           </div>
           <div class="col-md-8">
             <h2 class="works-description">
-              We tackle the tough stuff, rethink the norm, and deliver results
-              that challenge the status quo.
+              When creative collides with tech, this is what happens.
             </h2>
           </div>
         </div>
       </div>
     </section>
+
     <section>
       <div class="container-fluid p-0">
         <div class="">
@@ -416,11 +378,11 @@
               </div>
             </div>
             <div class="col-md-12"
-              style="background: url('./assets/images/banner2.png') no-repeat center center/cover;">
+              style="background: url('./assets/images/banner1.jpeg') no-repeat center center/cover;">
               <div class="container">
                 <div class="project-card">
                   <div class="project-content">
-                    <h2>Marina Bay Sands</h2>
+                    <h2>My First Skool</h2>
                     <p>
                       Digital strategy <span class="stroke">|</span> UI/UX
                       <span class="stroke">|</span> Branding
@@ -433,11 +395,11 @@
               </div>
             </div>
             <div class="col-md-12"
-              style="background: url('./assets/images/banner1.jpeg') no-repeat center center/cover;">
+              style="background: url('./assets/images/banner2.png') no-repeat center center/cover;">
               <div class="container">
                 <div class="project-card">
                   <div class="project-content">
-                    <h2>Marina Bay Sands</h2>
+                    <h2>Resorts World Sentosa</h2>
                     <p>
                       Digital strategy <span class="stroke">|</span> UI/UX
                       <span class="stroke">|</span> Branding
@@ -506,7 +468,7 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section testimonials-dark">
       <div class="container-fluid">
         <div class="container">
           <div class="row">
@@ -526,7 +488,7 @@
             <div class="col-md-9">
               <h2 class="pb-5 testimonial-description">
                 Don't just take our word for it — hear from our clients who’ve
-                experienced the impact of our solutions firsthand.
+                seen what we can really do.
               </h2>
               <div class="testimonial-slider-wrapper">
                 <div class="testimonial-slider">
@@ -624,7 +586,7 @@
           </div>
           <div class="col-12 col-md-8">
             <h2 class="news-description">
-              Stay updated on our latest projects, achievements, and events<span class="highlight-dot">.</span>
+              What we’re doing, saying and the impact we are making. Stay tuned<span class="highlight-dot">.</span>
             </h2>
           </div>
         </div>
@@ -740,7 +702,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container-fluid" style="margin-left: 0px; margin-right: 0px">
-      <div class="row" style="">
+      <div class="row">
         <div class="col-md-3 col-sm-3 footer-logo">
           <div class="footer-column">
             <img src="./assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="padding-bottom: 110px" />
@@ -753,7 +715,7 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Works</a></li>
+              <li><a href="#">Work</a></li>
               <li><a href="#">Services</a></li>
               <li><a href="#">News</a></li>
             </ul>
@@ -785,34 +747,24 @@
     <div class="footer-bottom d-flex align-items-center justify-content-between border-top border-dark">
       <div class="container-fluid">
         <div class="row text-center text-md-start">
-          <div class="col-12 col-md-8 mb-0 mb-md-0" style="
-                border-left: 1px solid #000;
-                border-bottom: 1px solid #000;
-                padding-left: 70px;
-              ">
+          <div class="col-12 col-md-8 mb-0 mb-md-0 reach-us">
             <p class="m-2 ml-2">
               Reach us at
               <a href="mailto:info@vertis.digital">info@vertis.digital</a>
             </p>
           </div>
 
-          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
-            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
-            <a href="#" class="d-block w-100 text-center px-3">Link 1</a>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 1</a>
           </div>
-          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
-            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
-            <a href="#" class="d-block w-100 text-center px-3">Link 2</a>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 2</a>
           </div>
-          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end"
-            style="border-left: 1px solid #000; border-bottom: 1px solid #000">
-            <a href="#" class="d-block w-100 text-center px-3">Link 3</a>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 3</a>
           </div>
-          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end" style="
-                border-left: 1px solid #000;
-                border-bottom: 1px solid #000;
-                background-color: #1ce783;
-              ">
+          <div class="col-12 col-md-1 footer-links up-arrow d-flex justify-content-center justify-content-md-end">
+
             <a href="#" class="back-to-top d-flex align-items-center justify-content-center d-block w-100">
               <img src="./assets/images/Arrow-Up.svg" alt="Back to Top" style="width: 20px; height: 20px" />
             </a>
@@ -832,9 +784,6 @@
   <script type="text/javascript" src="./dist/app.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
 
 </body>
 

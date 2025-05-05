@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertis Website - News Page</title>
+
+  <link rel="stylesheet" href="../../dist/app.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+  <meta name="description" content="New Vertis Website">
+  <meta property="og:site_name" content="Vertis Website">
+  <meta property="og:title" content="Vertis Website">
+  <meta property="og:description" content="New Vertis Website">
+  <meta property="og:url" content="http://localhost:8080/pages/news/">
+  <meta property="og:locale" content="">
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid d-flex align-items-center justify-content-between"
+        style="border: 1px solid black; padding-left: 0px">
+        <!-- Logo -->
+        <a href="../../index.html" class="navbar-brand">
+          <img src="../../assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="height: 40px" />
+        </a>
+
+        <!-- Navbar Toggler for Mobile -->
+        <div class="d-lg-none d-flex ms-auto align-items-center">
+          <button id="navbar-toggler" class="navbar-toggler border-start border-right" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <img id="navbar-toggler-icon" src="../../assets/images/Hamburger.svg" alt="Menu" width="30" height="30" />
+          </button>
+          <!-- Get in Touch Icon -->
+          <a href="#" class="nav-link me-2 border-start" style="background-color: #1ce783; padding: 10px 12px">
+            <img src="../../assets/images/Message.svg" alt="Message" width="30" height="30" />
+          </a>
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse border-start-nav" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="../about/index.html" class="nav-link">ABOUT</a></li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown position-static">
+              <a href="../group/index.html" class="nav-link" id="vertisGroupDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">GROUP
+                <img src="../../assets/images/icons/24/Accordion-down.svg" alt="Dropdown Icon" id="dropdownIcon"
+                  class="dropdown-icon" />
+              </a>
+
+              <div class="dropdown-menu full-width-dropdown" aria-labelledby="vertisGroupDropdown">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Experience</a></h6>
+                    <a href="../individual-article/index.html" class="dropdown-column-sublinks">Individual Article</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 2</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 3</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Technology</a></h6>
+                    <a href="../individual-project/index.html" class="dropdown-column-sublinks">Individual Project</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 5</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 6</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Solutions</a></h6>
+                    <a href="../individual-pillar/index.html" class="dropdown-column-sublinks">Individual Pillar</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h6><a href="#">Vertis Ventures</a></h6>
+                    <a href="#" class="dropdown-column-sublinks">Service 10</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 11</a>
+                    <a href="#" class="dropdown-column-sublinks">Service 12</a>
+                  </div>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="#" class="btn btn-success">View Vertis Group</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="../works/index.html" class="nav-link">WORKS</a></li>
+            <li class="nav-item"><a href="../news/index.html" class="nav-link">NEWS</a></li>
+            <li class="nav-item careers-link border-start-nav">
+              <a href="../career/index.html" class="nav-link pl-3">CAREERS</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Get in Touch Button -->
+        <ul class="navbar-nav d-none d-lg-flex ms-auto">
+          <li class="nav-item border-start ms-3" style="background-color: #1ce783">
+            <a href="#" class="nav-link">GET IN TOUCH</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section">
+      <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb custom-breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">News</li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <b>Article Title</b>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section py-2 px-5 px-sm-5">
+      <div class="container mt-5">
+
+        <h2 class="headline">In the News<span class="highlight-dot">.</span></h2>
+        <p class="sub-header mb-5">Stay updated with the latest stories, insights, and milestones from Vertis.</p>
+
+        <!-- Filter buttons -->
+        <div class="filter-buttons d-none d-md-flex justify-content-start">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Category</button>
+          <button class="filter-btn">Category</button>
+          <button class="filter-btn">Category</button>
+          <button class="filter-btn">Category</button>
+        </div>
+        <div class="swiper-container d-md-none">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <button class="filter-btn active">All</button>
+            </div>
+            <div class="swiper-slide">
+              <button class="filter-btn">Category</button>
+            </div>
+            <div class="swiper-slide">
+              <button class="filter-btn">Category</button>
+            </div>
+            <div class="swiper-slide">
+              <button class="filter-btn">Category</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card Grid -->
+        <div style="padding-left: 20px; padding-right: 20px;">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row card">
+                <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                  <img src="../../assets/images/icons/Rectangle.png" alt="Project image" class="img-fluid">
+                </div>
+                <div class="col-md-9 col-sm-12 col-12 card-border">
+                  <div class="card-body">
+                    <h5 class="card-title">Vertis Team Member Wins Sitecore Most Valuable Professional Award
+                    </h5>
+                    <p class="text-muted">January 15, 2024</p>
+                    <p class="card-text">SINGAPORE - Singapore-headquartered digital agency Vertis today
+                      announced that
+                      Thom
+                      Puiman, Vertis Solution Architect, has been named a Most Valuable Professional (MVP)
+                      in the
+                      Technology
+                      sector by Sitecore®, a global leader in end-to-end digital experience management
+                      software. Thom was
+                      one of only 147 worldwide to be named a Sitecore Technology MVP this year.</p>
+                    <div class="tags">
+                      <span>UI & UX</span>
+                      <span>Digital Strategy</span>
+                    </div>
+                  </div>
+                  <a href="#" class="icon-link position-absolute bottom-0 end-0 p-5">
+                    <img class="icon" src="../../assets/images/icons/24/Arrow Diagonal.svg">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row card d-flex flex-row">
+                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                  <img src="../../assets/images/icons/Rectangle.png" alt="Project image" class="img-fluid">
+                </div>
+                <div class="col-md-9 col-sm-12 col-12 card-border">
+                  <div class="card-body">
+                    <h5 class="card-title">Vertis Team Member Wins Sitecore Most Valuable Professional Award
+                    </h5>
+                    <p class="text-muted">January 15, 2024</p>
+                    <p class="card-text">SINGAPORE - Singapore-headquartered digital agency Vertis today
+                      announced that
+                      Thom
+                      Puiman, Vertis Solution Architect, has been named a Most Valuable Professional (MVP)
+                      in the
+                      Technology
+                      sector by Sitecore®, a global leader in end-to-end digital experience management
+                      software. Thom was
+                      one of only 147 worldwide to be named a Sitecore Technology MVP this year.</p>
+                    <div class="tags">
+                      <span>UI & UX</span>
+                      <span>Digital Strategy</span>
+                    </div>
+                  </div>
+                  <a href="#" class="icon-link position-absolute bottom-0 end-0 p-5">
+                    <img class="icon" src="../../assets/images/icons/24/Arrow Diagonal.svg">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row card d-flex flex-row">
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <h5 class="card-title">Vertis Team Member Wins Sitecore Most Valuable Professional Award
+                    </h5>
+                    <p class="text-muted">January 15, 2024</p>
+                    <p class="card-text">SINGAPORE - Singapore-headquartered digital agency Vertis today
+                      announced that
+                      Thom
+                      Puiman, Vertis Solution Architect, has been named a Most Valuable Professional (MVP)
+                      in the
+                      Technology
+                      sector by Sitecore®, a global leader in end-to-end digital experience management
+                      software. Thom was
+                      one of only 147 worldwide to be named a Sitecore Technology MVP this year.</p>
+                    <div class="tags">
+                      <span>UI & UX</span>
+                      <span>Digital Strategy</span>
+                    </div>
+                  </div>
+                  <a href="#" class="icon-link position-absolute bottom-0 end-0 p-5">
+                    <img class="icon" src="../../assets/images/icons/24/Arrow Diagonal.svg">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="pagination-custom mt-5">
+          <button class="pagination-arrow">&larr;</button>
+          <button class="pagination-page active-page">1</button>
+          <button class="pagination-page">2</button>
+          <button class="pagination-page">3</button>
+          <span>...</span>
+          <button class="pagination-page">10</button>
+          <button class="pagination-arrow">&rarr;</button>
+        </div>
+
+        <!-- Pagination Info -->
+        <div class="pagination-info pb-5">
+          Showing 9 of 40 results
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <h6 class="section-title">CONTACT</h6>
+          </div>
+          <div class="col-12 col-md-9">
+            <h2 class="contact-heading pb-5">
+              This is the part where you get in touch and we make wonderful things happen<span>.</span>
+            </h2>
+            <form>
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <input type="text" class="form-control" placeholder="Name" required>
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-6">
+                  <div class="placeholder-wrapper">
+                    <input type="text" class="form-control" placeholder="Company" required>
+                    <span class="star">*</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Country/Region">
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-12 col-md-12">
+                  <div class="placeholder-wrapper">
+                    <textarea class="form-control" rows="1" placeholder="Message" required></textarea>
+                    <span class="star">*</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-start mt-4">
+                <button type="submit" class="white-transparent-button-with-icon">
+                  <span>Submit</span> <img src="../../assets/images/icons/icon-trailing-swap.svg">
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid" style="margin-left: 0px; margin-right: 0px">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 footer-logo">
+          <div class="footer-column">
+            <img src="../../assets/images/logo/Vertis_Logo.svg" alt="Vertis Logo" style="padding-bottom: 110px" />
+            <p>12 Keong Saik Rd<br />#02-00<br />Singapore 089119</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px; padding-bottom: 50px">
+          <div class="footer-column">
+            <h5>MENU</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>IN THE LOOP</h5>
+            <ul>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Press Releases</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 footer-elements" style="padding-top: 50px">
+          <div class="footer-column">
+            <h5>CAREERS</h5>
+            <ul>
+              <li><a href="#">Apply for a Job</a></li>
+              <li><a href="#">Get in Touch</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Links -->
+    <div class="footer-bottom d-flex align-items-center justify-content-between border-top border-dark">
+      <div class="container-fluid">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-8 mb-0 mb-md-0 reach-us">
+            <p class="m-2 ml-2">
+              Reach us at
+              <a href="mailto:info@vertis.digital">info@vertis.digital</a>
+            </p>
+          </div>
+
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 1</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 2</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="d-block w-100 text-center">Link 3</a>
+          </div>
+          <div class="col-12 col-md-1 footer-links up-arrow d-flex justify-content-center justify-content-md-end">
+
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center d-block w-100">
+              <img src="../../assets/images/Arrow-Up.svg" alt="Back to Top" style="width: 20px; height: 20px" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- End -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script type="text/javascript" src="../../dist/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

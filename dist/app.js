@@ -1,1 +1,208 @@
-!function(){var e,n={641:function(){document.querySelectorAll(".form-control")&&document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".form-control").forEach((function(e){var n=e.getAttribute("placeholder");e.hasAttribute("required")&&!n.includes("*")&&e.setAttribute("placeholder",n+" ")}))})),document.querySelectorAll(".news-title-text")&&document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".news-title-text").forEach((function(e){var n=e.innerText.trim().split(" ");if(n.length>10)e.innerText=n.slice(0,10).join(" ")+"...";else for(var t=10-n.length,r=0;r<t;r++)e.innerHTML+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}))})),document.querySelector("section.our-people-section")&&(document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".card-text").forEach((function(e){var n=e.innerText.trim().split(" ");if(n.length>20)e.innerText=n.slice(0,20).join(" ")+"...";else for(var t=20-n.length,r=0;r<t;r++)e.innerHTML+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}))})),document.addEventListener("DOMContentLoaded",(function(){new Swiper(".swiper-container",{slidesPerView:2,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},breakpoints:{992:{slidesPerView:3},1200:{enabled:!1}}})}))),document.querySelector(".testimonial-slider")&&(document.addEventListener("DOMContentLoaded",(function(){var e,n,t=document.querySelector(".testimonial-slider"),r=document.querySelector(".next-btn"),o=document.querySelector(".prev-btn");if(t&&r&&o){var i=0,c=(null===(e=document.querySelector(".testimonial-card"))||void 0===e?void 0:e.offsetWidth)+20,l=document.querySelectorAll(".testimonial-card").length,u=Math.floor((null==t||null===(n=t.parentElement)||void 0===n?void 0:n.offsetWidth)/c);r.addEventListener("click",(function(){Math.abs(i)<c*(l-u)&&(i-=c,t.style.transform="translateX(".concat(i,"px)"))})),o.addEventListener("click",(function(){i<0&&(i+=c,t.style.transform="translateX(".concat(i,"px)"))}))}})),document.addEventListener("DOMContentLoaded",(function(){function e(){var e=document.querySelector(".nav-buttons"),n=document.querySelector(".testimonial-slider-wrapper"),t=document.querySelector(".buttons");e&&n&&t&&(window.innerWidth<=768?n.contains(e)||n.appendChild(e):t.contains(e)||t.appendChild(e))}e(),window.addEventListener("resize",e)})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".testimonial-text").forEach((function(e){var n=e.innerText.trim().split(" ");if(n.length>30)e.innerText=n.slice(0,30).join(" ")+"...";else for(var t=30-n.length,r=0;r<t;r++)e.innerHTML+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}))})))},366:function(){}},t={};function r(e){var o=t[e];if(void 0!==o)return o.exports;var i=t[e]={exports:{}};return n[e](i,i.exports,r),i.exports}r.m=n,e=[],r.O=function(n,t,o,i){if(!t){var c=1/0;for(s=0;s<e.length;s++){t=e[s][0],o=e[s][1],i=e[s][2];for(var l=!0,u=0;u<t.length;u++)(!1&i||c>=i)&&Object.keys(r.O).every((function(e){return r.O[e](t[u])}))?t.splice(u--,1):(l=!1,i<c&&(c=i));if(l){e.splice(s--,1);var d=o();void 0!==d&&(n=d)}}return n}i=i||0;for(var s=e.length;s>0&&e[s-1][2]>i;s--)e[s]=e[s-1];e[s]=[t,o,i]},r.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},function(){var e={532:0,367:0};r.O.j=function(n){return 0===e[n]};var n=function(n,t){var o,i,c=t[0],l=t[1],u=t[2],d=0;if(c.some((function(n){return 0!==e[n]}))){for(o in l)r.o(l,o)&&(r.m[o]=l[o]);if(u)var s=u(r)}for(n&&n(t);d<c.length;d++)i=c[d],r.o(e,i)&&e[i]&&e[i][0](),e[i]=0;return r.O(s)},t=self.webpackChunkvertis_new_website=self.webpackChunkvertis_new_website||[];t.forEach(n.bind(null,0)),t.push=n.bind(null,t.push.bind(t))}(),r.O(void 0,[367],(function(){return r(641)}));var o=r.O(void 0,[367],(function(){return r(366)}));o=r.O(o)}();
+// header.js - Start
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.getElementById("vertisGroupDropdown");
+    if (!dropdown) return;
+
+    const dropdownIcon = document.getElementById("dropdownIcon");
+    const dropdownMenu = dropdown?.nextElementSibling;
+    const parent = dropdown?.parentElement;
+
+    if (!dropdownIcon || !dropdownMenu || !parent) return;
+
+    parent.addEventListener("mouseenter", () => {
+        dropdownIcon.src = "https://imran-vertis.github.io/vertis-website-demo/assets/images/icons/24/Accordion-up.svg";
+        dropdownMenu.classList.add("show");
+        dropdown.setAttribute("aria-expanded", "true");
+    });
+
+    parent.addEventListener("mouseleave", () => {
+        dropdownIcon.src = "https://imran-vertis.github.io/vertis-website-demo/assets/images/icons/24/Accordion-down.svg";
+        dropdownMenu.classList.remove("show");
+        dropdown.setAttribute("aria-expanded", "false");
+    });
+
+    dropdown.addEventListener("click", () => {
+        window.location.href = "https://imran-vertis.github.io/vertis-website-demo/pages/group/index.html";
+    });
+});
+
+
+// End
+
+// contact.js - Start
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (document.querySelectorAll(".contact-section .form-control").length > 0) {
+
+        const inputs = document.querySelectorAll(".form-control");
+        inputs.forEach((input) => {
+            let placeholderText = input.getAttribute("placeholder");
+            if (input.hasAttribute("required") && !placeholderText.includes("*")) {
+                input.setAttribute("placeholder", placeholderText + " ");
+            }
+        });
+
+    }
+});
+
+// End
+
+// our_people.js - Start
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const peopleSection = document.querySelector("section.our-people-section");
+    if (!peopleSection) return;
+
+    new Swiper(".swiper-container", {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            565: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                enabled: false,
+            }
+        }
+    });
+});
+
+// End
+
+
+// other_works.js - Start
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (document.querySelector(".other-works-section.individual-project")) {
+
+
+        new Swiper(".swiper-container", {
+            slidesPerView: 1.5,
+            spaceBetween: 15,
+            breakpoints: {
+                556: {
+                    slidesPerView: 1.8, // Show 2 cards on tablets
+                    spaceBetween: 15
+                },
+                992: {
+                    slidesPerView: 3, // Disable Swiper on desktops
+                    enabled: false
+                }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+
+});
+
+// End
+
+
+// testimonials.js - Start
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector(".testimonial-slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+
+    if (slider && nextBtn && prevBtn) {
+        let translateX = 0;
+        const cardWidth = document.querySelector(".testimonial-card")?.offsetWidth + 20;
+        const totalCards = document.querySelectorAll(".testimonial-card").length;
+        const visibleCards = Math.floor(slider?.parentElement?.offsetWidth / cardWidth);
+
+        nextBtn.addEventListener("click", () => {
+            if (Math.abs(translateX) < cardWidth * (totalCards - visibleCards)) {
+                translateX -= cardWidth;
+                slider.style.transform = `translateX(${translateX}px)`;
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (translateX < 0) {
+                translateX += cardWidth;
+                slider.style.transform = `translateX(${translateX}px)`;
+            }
+        });
+    }
+
+    const moveNavButtons = () => {
+        const navButtons = document.querySelector(".nav-buttons");
+        const sliderWrapper = document.querySelector(".testimonial-slider-wrapper");
+        const colMd3 = document.querySelector(".buttons");
+
+        if (!navButtons || !sliderWrapper || !colMd3) return;
+
+        if (window.innerWidth <= 768) {
+            if (!sliderWrapper.contains(navButtons)) {
+                sliderWrapper.appendChild(navButtons);
+            }
+        } else {
+            if (!colMd3.contains(navButtons)) {
+                colMd3.appendChild(navButtons);
+            }
+        }
+    };
+
+    moveNavButtons();
+    window.addEventListener("resize", moveNavButtons);
+
+    const MAX_WORDS = 30;
+    const testimonialTexts = document.querySelectorAll(".testimonial-text");
+    testimonialTexts.forEach((title) => {
+        const words = title.innerText.trim().split(" ");
+        if (words.length > MAX_WORDS) {
+            title.innerText = words.slice(0, MAX_WORDS).join(" ") + "...";
+        } else {
+            const spacesNeeded = MAX_WORDS - words.length;
+            title.innerHTML += "&nbsp;".repeat(spacesNeeded * 5);
+        }
+    });
+});
+
+
+
+// End
+
+
+// works.js - Start
+
+if (
+    document.querySelector('.works-section') ||
+    document.querySelector('.news-section')
+) {
+
+    document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-container", {
+            slidesPerView: "3", // Adjusts to button width
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                992: { enabled: false }, // Disables Swiper on desktops (992px+)
+            }
+        });
+    });
+}
+
+// End
+
