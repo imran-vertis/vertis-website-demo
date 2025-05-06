@@ -11,6 +11,353 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
+  <style>
+    /* Jobs Section */
+    .job-card {
+      border: 1px solid #0d0d0d;
+      padding: 20px;
+      transition: box-shadow 0.3s ease-in-out;
+      height: 100%;
+    }
+
+    .job-card:hover {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-card-list {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-title-list {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .job-description-list {
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .job-location img,
+    .job-type img {
+      margin-right: 5px;
+    }
+
+    .job-location-list,
+    .job-type-list {
+      margin-right: 20px;
+      color: #aaa;
+    }
+
+    .d-flex {
+      margin-top: 10px;
+    }
+
+    .icon-list {
+      color: black;
+      margin-right: 10px;
+    }
+
+    .icon-grid {
+      color: white;
+    }
+
+    .btn-group .btn-outline-primary {
+      border-color: #000000;
+      border: 1px solid #000000;
+      border-radius: 25px;
+      padding: 1px;
+    }
+
+    .btn-group label:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .btn-group label:last-child {
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    /* SVG default state - set color to black */
+    .btn-group label img {
+      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Styling for the label (button) */
+    .btn-group label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+    }
+
+    /* Change the background, border, and SVG color when the button is checked */
+    .btn-check:checked+.btn-outline-primary {
+      background-color: #00000000;
+      border-color: #000;
+    }
+
+    /* Change the icon color when the button is active (clicked) */
+    .btn-check:checked+.btn-outline-primary img {
+      filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(400%) hue-rotate(80deg) brightness(90%) contrast(80%);
+    }
+
+    /* Set border color, background, and icon color for active button */
+    .btn-check:checked+.btn-outline-primary label {
+      background-color: #000;
+      border-color: #99ff00;
+    }
+
+    /* Custom hover effect for button */
+    .btn-group label:hover {
+      cursor: pointer;
+      border: 1px solid #000000;
+      border-color: #000;
+      opacity: 0.8;
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .job-location,
+    .job-type {
+      font-size: 0.9rem;
+      color: #888;
+      margin-right: 15px;
+    }
+
+    .job-description {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .apply-now-btn {
+      border-radius: 50px;
+      padding: 7px 10px;
+      background-color: white;
+      border: 1px solid #000000;
+      color: black;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 20px;
+      padding-right: 4px;
+      display: inline-block;
+    }
+
+    .apply-now-text {
+      padding-right: 8px;
+    }
+
+    .apply-now-btn:hover {
+      background-color: #00ff87;
+      color: black;
+    }
+
+    /*.apply-now-btn-icon {
+      background-color: #00ff81;
+      border-radius: 50%;
+      padding: 4px 10px;
+      border: 1px solid black;
+    }*/
+
+    .pagination {
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination .page-item.active .page-link {
+      background-color: #00ff87;
+      border-color: #00ff87;
+      color: black;
+    }
+
+    .input-group {
+      max-width: 600px;
+      margin-right: auto;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .form-control-search {
+      border-radius: 30px 0 0 30px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border: 1px solid #000000;
+      padding-left: 15px;
+      box-shadow: none;
+      width: 80%;
+      height: auto;
+    }
+
+    .input-group-text img {
+      width: 20
+    }
+
+    .input-group-text {
+      border-radius: 0 30px 30px 0;
+      background-color: #fff;
+      border: 1px solid #000000;
+      padding: 0 15px;
+      cursor: pointer;
+      border-left: transparent;
+      padding-right: 10px;
+    }
+
+    .input-group-text svg {
+      fill: #888;
+    }
+
+    .form-control-search:focus,
+    .input-group-text:hover {
+      border-color: #000000;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-select {
+      border-radius: 30px;
+      max-width: 450px;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-select:focus {
+      border-color: #000000;
+      box-shadow: 0 0 5px rgba(0, 255, 135, 0.5);
+    }
+
+    .pagination-custom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /*margin-left: 475px;
+            margin-right: 475px;*/
+      background-color: #f4f4f4;
+      border-radius: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .pagination-custom button {
+      border: none;
+      background-color: transparent;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      padding: 10px;
+    }
+
+    .pagination-custom .pagination-arrow {
+      color: #6c757d;
+      font-size: 1.0rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    .pagination-custom .pagination-page {
+      margin: 0 5px;
+      border: none;
+      background-color: transparent;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #6c757d;
+      cursor: pointer;
+    }
+
+    .pagination-custom .active-page {
+      background-color: #1CE783;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .pagination.empty {
+      background-color: transparent;
+    }
+
+    .pagination-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive styles for tablets and mobile devices */
+    @media (max-width: 768px) {
+      .pagination-custom {
+        margin-left: 100px;
+        margin-right: 100px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .pagination-custom .pagination-arrow,
+      .pagination-custom .active-page {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+      }
+
+      .pagination-custom button {
+        font-size: 1rem;
+      }
+
+      .pagination-custom .pagination-page {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .pagination-custom {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .pagination-custom .pagination-arrow,
+      .pagination-custom .active-page {
+        width: 35px;
+        height: 35px;
+        font-size: 10px;
+      }
+
+      .pagination-custom button {
+        font-size: 0.9rem;
+      }
+
+      .pagination-custom .pagination-page {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
 
 
   <meta name="description" content="New Vertis Website">
@@ -175,347 +522,60 @@
 
     <section class="explore-jobs py-5 px-5 px-sm-5">
       <div class="container">
-
-        <!-- Search bar and filters -->
         <div class="row mb-5">
-          <h3 class="mb-4 header">Explore open roles.</h3>
-          <p class="sub-header">Find what fits. Or bend the role until it does.</p>
-          <div class="col-lg-6 col-12 mb-3 mb-lg-0 mt-2">
+          <h3>Explore our current openings and find the role that’s right for you.</h3>
+          <div class="col-lg-6 col-12 mb-3 mb-md-0 mt-2">
             <div class="input-group">
-              <input type="text" class="form-control-search" placeholder="Search">
+              <input type="text" name="search" class="keyword-search form-control-search" placeholder="Search">
               <span class="input-group-text">
                 <img src="../../assets/images/icons/24/Search.svg">
               </span>
             </div>
           </div>
-
           <div class="d-flex flex-wrap col-lg-6 col-12 gap-2">
             <div class="col-md-4 col-4 mb-3">
-              <select class="form-select">
-                <option selected>All countries</option>
-                <option value="1">Singapore</option>
-                <option value="2">USA</option>
-                <option value="3">UK</option>
+              <select class="form-select" name="countries" id="countries">
+                <option selected value="">All countries</option>
               </select>
             </div>
-
             <div class="col-md-4 col-4 mb-3">
-              <select class="form-select">
-                <option selected>All roles</option>
-                <option value="1">UI/UX Designer</option>
-                <option value="2">Frontend Developer</option>
-                <option value="3">Backend Developer</option>
+              <select class="form-select" name="roles" id="roles">
+                <option selected value="">All roles</option>
               </select>
             </div>
-
             <div class="col-md-3 col-3 mb-3">
               <div class=" justify-content-center pt-1">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="list" autocomplete="off"
+                    checked>
                   <label class="btn btn-outline-primary" for="btnradio1">
-                    <img src="../../assets/images/icons/24/listing.svg" alt="list" style="border: 1px solid;
-                  border-radius: 10px;
-                  padding: 2px;">
+                    <img src="../../assets/images/icons/24/listing.svg" alt="list"
+                      style="border: 1px solid;border-radius: 10px;padding: 2px;">
                   </label>
 
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="grid" autocomplete="off">
                   <label class="btn btn-outline-primary" for="btnradio3">
-                    <img src="../../assets/images/icons/24/card.svg" alt="grid" style="border: 1px solid;
-                  border-radius: 10px;
-                  padding: 2px;">
+                    <img src="../../assets/images/icons/24/card.svg" alt="grid"
+                      style="border: 1px solid;border-radius: 10px;padding: 2px;">
                   </label>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="jobs">
 
-        <!-- Grid layout -->
-        <div>
-          <div class="row">
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24//location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;">
-              <div class="job-card">
-                <div class="job-title">UI/UX Designer</div>
-                <div class="d-flex align-items-center">
-                  <span class="job-location"><img src="../../assets/images/icons/24/location.svg"> Singapore</span>
-                  <span class="job-type"><img src="../../assets/images/icons/24/time.svg"> Full-time</span>
-                </div>
-                <div class="job-description">
-                  You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                  goals.
-                  From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                  products...
-                </div>
-                <button class="apply-now-btn">
-                  Apply now <span class="apply-now-btn-icon"><img
-                      src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- List layout -->
-        <div>
-          <div class="row mt-5">
-            <hr />
-            <!-- Job Card 1 -->
-            <div class="job-card-list mt-2">
-              <div class="row">
-                <div class="col-md-5 mt-4">
-                  <div class="job-title-list ">UI/UX Designer</div>
-                  <div class="d-flex align-items-center">
-                    <span class="job-location"><img src="../../assets/images/icons/24/location.svg" alt="Location Icon">
-                      Singapore</span>
-                    <span class="job-type"><img src="../../assets/images/icons/24/time.svg" alt="Time Icon">
-                      Full-time</span>
-                  </div>
-                </div>
-                <div class="col-md-7 mt-4 mb-4">
-                  <div class="job-description mb-4">
-                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                    goals.
-                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                    products...
-                  </div>
-                  <button class="apply-now-btn">
-                    Apply now <span class="apply-now-btn-icon"><img
-                        src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                  </button>
-                </div>
-              </div>
-
-            </div>
-            <hr />
-            <div class="job-card-list mt-2">
-              <div class="row">
-                <div class="col-md-5 mt-4">
-                  <div class="job-title-list ">UI/UX Designer</div>
-                  <div class="d-flex align-items-center">
-                    <span class="job-location"><img src="../../assets/images/icons/24/location.svg" alt="Location Icon">
-                      Singapore</span>
-                    <span class="job-type"><img src="../../assets/images/icons/24/time.svg" alt="Time Icon">
-                      Full-time</span>
-                  </div>
-                </div>
-                <div class="col-md-7 mt-4 mb-4">
-                  <div class="job-description mb-4">
-                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                    goals.
-                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                    products...
-                  </div>
-                  <button class="apply-now-btn">
-                    Apply now <span class="apply-now-btn-icon"><img
-                        src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <hr />
-            <div class="job-card-list mt-2">
-              <div class="row">
-                <div class="col-md-5 mt-4">
-                  <div class="job-title-list ">UI/UX Designer</div>
-                  <div class="d-flex align-items-center">
-                    <span class="job-location"><img src="../../assets/images/icons/24/location.svg" alt="Location Icon">
-                      Singapore</span>
-                    <span class="job-type"><img src="../../assets/images/icons/24/time.svg" alt="Time Icon">
-                      Full-time</span>
-                  </div>
-                </div>
-                <div class="col-md-7 mt-4 mb-4">
-                  <div class="job-description mb-4">
-                    You will design intuitive, user-friendly interfaces and experiences that align with our clients'
-                    goals.
-                    From wireframes to high-fidelity prototypes, you'll create visually engaging and functional digital
-                    products...
-                  </div>
-                  <button class="apply-now-btn">
-                    Apply now <span class="apply-now-btn-icon"><img
-                        src="../../assets/images/icons/icon-trailing-swap.svg"></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <!-- Pagination -->
-          <div class="pagination-custom mt-5">
-            <button class="pagination-arrow">&larr;</button>
-            <button class="pagination-page active-page">1</button>
-            <button class="pagination-page">2</button>
-            <button class="pagination-page">3</button>
-            <span>...</span>
-            <button class="pagination-page">10</button>
-            <button class="pagination-arrow">&rarr;</button>
-          </div>
-
-          <!-- Pagination Info -->
-          <div class="pagination-info pb-5">
-            Showing 9 of 40 results
-          </div>
 
         </div>
+        <div class="paginate">
+          <div class="pagination pagination-custom mt-5">
+
+          </div>
+          <div class="pagination-text pagination-info pb-5">
+
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Email us section -->
@@ -734,6 +794,881 @@
   <script type="text/javascript" src="../../dist/app.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script id="manatal_data" type="application/json">
+      {
+          "location_image": "https://imran-vertis.github.io/vertis-website-demo/assets/images/icons/24/location.svg",
+          "time_image": "https://imran-vertis.github.io/vertis-website-demo/assets/images/icons/24/time.svg",
+          "arrow_icon": "https://imran-vertis.github.io/vertis-website-demo/assets/images/icons/icon-trailing-swap.svg"
+        }
+      </script>
+  <script type="text/javascript">
+
+    jQuery(document).ready(function () {
+      const manatal_data = JSON.parse(document.getElementById("manatal_data").text)
+      /*const settings = {
+        async: true,
+        crossDomain: true,
+      };*/
+      jQuery.ajax({
+        url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?page_size=300',
+        method: 'GET',
+        success: function (res) {
+          var countries = [];
+          var roles = [];
+          var country_list, role_list;
+          console.log(res);
+          jQuery.each(res.results, function (index, job) {
+            if (jQuery.inArray(job.country, countries) == -1) { countries.push(job.country); }
+            if (jQuery.inArray(job.position_name, roles) == -1) { roles.push(job.position_name); }
+          })
+          jQuery.each(countries, function (index, country) {
+            country_list += '<option value="' + country + '">' + country + '</option>';
+          })
+          jQuery.each(roles, function (index, role) {
+            role_list += '<option value="' + role + '">' + role + '</option>';
+          })
+          jQuery("#countries").append(country_list);
+          jQuery("#roles").append(role_list);
+          //console.log(countries);
+          //console.log(roles);
+        }
+      });
+
+      jQuery.ajax({
+        url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?page_size=6',
+        method: 'GET',
+        success: function (res) {
+          var job_type = '';
+          var job_card = '';
+          //console.log(res);
+          job_card += '<div class="row mt-5"><hr/>';
+          jQuery.each(res.results, function (index, job) {
+            job_card += '<div class="job job-card-list mt-2"><div class="row">';
+            job_card += '<div class="col-md-5 mt-4 left-box">';
+            job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+            job_card += '<div class="location-and-type d-flex align-items-center">';
+            if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+            job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+            job_card += '</div></div>';
+            job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+            //console.log(job);
+            var desc = jQuery(job.description)[8].innerText;
+
+            job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+            job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+            job_card += '</div>';
+            job_card += '</div></div>';
+          })
+          jQuery('.jobs').html(job_card);
+          var total = res.count;
+          var prev_url, prev_page, next_url, next_page, paginate = '';
+          if (res.previous != null) {
+            prev_page = ((res.previous.split('?')[1]).split('&')[0]).split('=')[1];
+            prev_url = '<button class="prev page active pagination-arrow" page="' + prev_page + '">&#8592;</button>';
+          } else {
+            prev_url = '<button class="prev inactive pagination-arrow">&#8592;</button>';
+          }
+          if (res.next != null) {
+            next_page = ((res.next.split('?')[1]).split('&')[0]).split('=')[1];
+            next_url = '<button class="next page active pagination-arrow" page="' + next_page + '">&#8594;</button>';
+          } else {
+            next_url = '<button class="next inactive pagination-arrow">&#8594;</button>';
+          }
+          var total_pages = parseInt(total / 6);
+          var extra_count = total % 6;
+          if (extra_count != 0) {
+            total_pages = total_pages + 1;
+          }
+          /*var j=1;
+          var dot_count = 0;
+          for(i=0; i<=total; i+=6){
+           if(j==1){
+              paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+            }else{
+            
+              if(j== 2 || j== 3 || j == total_pages){
+                paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+              }else{
+                if(dot_count == 0){
+                paginate += '<button class="">...</button>';
+                  dot_count++;
+                }
+              }
+            }
+            j++;
+            console.log(j);
+          }*/
+          paginate = rebuildPagination(1, total_pages);
+          var final_pagination = prev_url + paginate + next_url;
+          jQuery(".pagination").html(final_pagination);
+          jQuery(".pagination-text").html("Showing 6 of " + total);
+        }
+      });
+      jQuery(document).on('click', '.page', function (e) {
+        if (jQuery(this).hasClass("current")) {
+          e.preventDefault();
+          return false;
+        }
+
+        /*if(layout == 'list'){
+          list_layout();
+        }
+        if(layout == 'grid'){
+          grid_layout();
+        }*/
+
+        var page_num = jQuery(this).attr("page");
+        var country = jQuery("#countries").val();
+        var position = jQuery("#roles").val();
+        var search = jQuery(".keyword-search").val();
+        var layout = jQuery("input[name='btnradio']:checked").val();
+        jQuery.ajax({
+          url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page=' + page_num + '&page_size=6',
+          method: 'GET',
+          success: function (res) {
+            var job_type = '';
+            var job_card = '';
+            console.log(res);
+            if (layout == 'list') {
+              jQuery.each(res.results, function (index, job) {
+                job_card += '<div class="job job-card-list mt-2"><div class="row">';
+                job_card += '<div class="col-md-5 mt-4 left-box">';
+                job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div></div>';
+                job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+                var desc = jQuery(job.description)[8].innerText;
+                //console.log(desc);
+                job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div></div>';
+              })
+            }
+            if (layout == 'grid') {
+              jQuery.each(res.results, function (index, job) {
+                if (index == 0 || index == 3) {
+                  job_card += '<div class="row">';
+                }
+                job_card += '<div class="job col-md-4" style="padding-left: 0px; padding-right: 0px;">';
+                job_card += '<div class="job-card">';
+                job_card += '<div class="job-title">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div>';
+                var desc = jQuery(job.description)[8].innerHTML;
+                //console.log(desc);
+                job_card += '<div class="job-description">' + desc + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div>';
+                if (index == 2 || index == 5) {
+                  job_card += "</div>";
+                }
+              })
+            }
+
+
+            jQuery('.jobs').html(job_card);
+            var total = res.count;
+            var prev_url, prev_page, next_url, next_page, paginate = '';
+            if (res.previous != null) {
+              prev_page = ((res.previous.split('?')[1]).split('&')[1]).split('=')[1];
+              prev_url = '<button class="prev page pagination-arrow active" page="' + prev_page + '">&#8592;</button>';
+            } else {
+              prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+            }
+            if (res.next != null) {
+              next_page = ((res.next.split('?')[1]).split('&')[1]).split('=')[1];
+              next_url = '<button class="next pagination-arrow page active" page="' + next_page + '">&#8594;</button>';
+            } else {
+              next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+            }
+            var total_pages = parseInt(total / 6);
+            var extra_count = total % 6;
+            if (extra_count != 0) {
+              total_pages = total_pages + 1;
+            }
+            paginate = rebuildPagination(page_num, total_pages);
+            /*var j=1;
+            var dot_count = 0;
+            for(i=0; i<=total; i+=6){ 
+              if(j==page_num){
+                paginate += '<button class="page pagination-page current active-page" page="'+j+'">'+j+'</button>';
+              }else{
+              
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                
+                }
+              
+              j++;
+              console.log(j);
+            }*/
+            var final_pagination = prev_url + paginate + next_url;
+            jQuery(".pagination").html(final_pagination);
+            if (page_num == 1) {
+              jQuery(".pagination-text").html("Showing 6 of " + total);
+            } else {
+              jQuery(".pagination-text").html("Showing " + (6 * (page_num - 1) + 1) + " to " + (6 * page_num) + " of " + total);
+            }
+          }
+        });
+      });
+      jQuery(document).on("change", "#countries", function () {
+        var layout = jQuery("input[name='btnradio']:checked").val();
+        /*if(layout == 'list'){
+          list_layout();
+        }
+        if(layout == 'grid'){
+          grid_layout();
+        }*/
+        var country = jQuery(this).val();
+        var position = jQuery("#roles").val();
+        var search = jQuery(".keyword-search").val();
+        jQuery.ajax({
+          url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page_size=6',
+          method: 'GET',
+          success: function (res) {
+            var job_type = '';
+            var job_card = '';
+            console.log(res);
+            if (layout == 'list') {
+              jQuery.each(res.results, function (index, job) {
+                job_card += '<div class="job job-card-list mt-2"><div class="row">';
+                job_card += '<div class="col-md-5 mt-4 left-box">';
+                job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div></div>';
+                job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+                var desc = jQuery(job.description)[8].innerText;
+                //console.log(desc);
+                job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div></div>';
+              })
+            }
+            if (layout == 'grid') {
+              jQuery.each(res.results, function (index, job) {
+                if (index == 0 || index == 3) {
+                  job_card += '<div class="row">';
+                }
+                job_card += '<div class="job col-md-4" style="padding-left: 0px; padding-right: 0px;">';
+                job_card += '<div class="job-card">';
+                job_card += '<div class="job-title">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div>';
+                var desc = jQuery(job.description)[8].innerText;
+                //console.log(desc);
+                job_card += '<div class="job-description">' + desc.substring(0, 200) + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div>';
+                if (index == 2 || index == 5) {
+                  job_card += "</div>";
+                }
+              })
+            }
+            jQuery('.jobs').html(job_card);
+            var total = res.count;
+            var prev_url, prev_page, next_url, next_page, paginate = '';
+            if (total <= 6) {
+              prev_url = '';
+              next_url = '';
+              paginate = '';
+            } else {
+              if (res.previous != null) {
+                prev_page = ((res.previous.split('?')[1]).split('&')[0]).split('=')[1];
+                prev_url = '<button class="prev pagination-arrow page active" page="' + prev_page + '">&#8592;</button>';
+              } else {
+                prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+              }
+              if (res.next != null) {
+                next_page = ((res.next.split('?')[1]).split('&')[0]).split('=')[1];
+                next_url = '<button class="next pagination-arrow page active" page="' + next_page + '">&#8594;</button>';
+              } else {
+                next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+              }
+
+              /*var j=1;
+              for(i=0; i<=total; i+=6){ 
+                if(j==1){
+                  paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+                }else{
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                }
+                j++;
+                console.log(j);
+              }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(1, total_pages);
+
+            }
+            var final_pagination = prev_url + paginate + next_url;
+            jQuery(".pagination").html(final_pagination);
+            if (total <= 6) {
+              jQuery(".pagination").addClass("empty").html("");
+              jQuery(".pagination-text").html("");
+            } else {
+              jQuery(".pagination-text").html("Showing 6 of " + total);
+              jQuery(".pagination").removeClass("empty");
+            }
+          }
+        });
+      })
+      jQuery(document).on("change", "#roles", function () {
+        var layout = jQuery("input[name='btnradio']:checked").val();
+        /*if(layout == 'list'){
+          list_layout();
+        }
+        if(layout == 'grid'){
+          grid_layout();
+        }*/
+        var position = jQuery(this).val();
+        var country = jQuery("#countries").val();
+        var search = jQuery(".keyword-search").val();
+        jQuery.ajax({
+          url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page_size=6',
+          method: 'GET',
+          success: function (res) {
+            var job_type = '';
+            var job_card = '';
+            console.log(res);
+            if (layout == 'list') {
+              jQuery.each(res.results, function (index, job) {
+                job_card += '<div class="job job-card-list mt-2"><div class="row">';
+                job_card += '<div class="col-md-5 mt-4 left-box">';
+                job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div></div>';
+                job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+                var desc = jQuery(job.description)[8].innerText;
+                //console.log(desc);
+                job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div></div>';
+              })
+            }
+            if (layout == 'grid') {
+              jQuery.each(res.results, function (index, job) {
+                if (index == 0 || index == 3) {
+                  job_card += '<div class="row">';
+                }
+                job_card += '<div class="job col-md-4" style="padding-left: 0px; padding-right: 0px;">';
+                job_card += '<div class="job-card">';
+                job_card += '<div class="job-title">' + job.position_name + '</div>';
+                job_card += '<div class="location-and-type d-flex align-items-center">';
+                if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                job_card += '</div>';
+                var desc = jQuery(job.description)[8].innerText;
+                //console.log(desc);
+                job_card += '<div class="job-description">' + desc.substring(0, 200) + '</div>';
+                job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                job_card += '</div>';
+                job_card += '</div>';
+                if (index == 2 || index == 5) {
+                  job_card += "</div>";
+                }
+              })
+            }
+            jQuery('.jobs').html(job_card);
+            var total = res.count;
+            var prev_url, prev_page, next_url, next_page, paginate = '';
+            if (total <= 6) {
+              prev_url = '';
+              next_url = '';
+              paginate = '';
+            } else {
+              if (res.previous != null) {
+                prev_page = ((res.previous.split('?')[1]).split('&')[0]).split('=')[1];
+                prev_url = '<button class="prev pagination-arrow page active" page="' + prev_page + '">&#8592;</button>';
+              } else {
+                prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+              }
+              if (res.next != null) {
+                next_page = ((res.next.split('?')[1]).split('&')[0]).split('=')[1];
+                next_url = '<button class="next pagination-arrow page active" page="' + next_page + '">&#8594;</button>';
+              } else {
+                next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+              }
+              /*var j=1;
+              for(i=0; i<=total; i+=6){ 
+                if(j==1){
+                  paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+                }else{
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                }
+                j++;
+                console.log(j);
+              }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(1, total_pages);
+            }
+            var final_pagination = prev_url + paginate + next_url;
+            jQuery(".pagination").html(final_pagination);
+            if (total <= 6) {
+              jQuery(".pagination-text").html("");
+              jQuery(".pagination").addClass("empty").html("");
+            } else {
+              jQuery(".pagination-text").html("Showing 6 of " + total);
+              jQuery(".pagination").removeClass("empty");
+            }
+          }
+        });
+      })
+      jQuery(document).on("change", ".keyword-search", function () {
+        var search = jQuery(this).val();
+        if (search.length >= 3 || search.length == 0) {
+          var layout = jQuery("input[name='btnradio']:checked").val();
+          /*if(layout == 'list'){
+            list_layout();
+          }
+          if(layout == 'grid'){
+            grid_layout();
+          }*/
+          var country = jQuery("#countries").val();
+          var position = jQuery("#roles").val();
+          jQuery.ajax({
+            url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page_size=6',
+            method: 'GET',
+            success: function (res) {
+              var job_type = '';
+              var job_card = '';
+              console.log(res);
+              if (layout == 'list') {
+                jQuery.each(res.results, function (index, job) {
+                  job_card += '<div class="job job-card-list mt-2"><div class="row">';
+                  job_card += '<div class="col-md-5 mt-4 left-box">';
+                  job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+                  job_card += '<div class="location-and-type d-flex align-items-center">';
+                  if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                  job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                  job_card += '</div></div>';
+                  job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+                  var desc = jQuery(job.description)[8].innerText;
+                  //console.log(desc);
+                  job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+                  job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                  job_card += '</div>';
+                  job_card += '</div></div>';
+                })
+              }
+              if (layout == 'grid') {
+                jQuery.each(res.results, function (index, job) {
+                  if (index == 0 || index == 3) {
+                    job_card += '<div class="row">';
+                  }
+                  job_card += '<div class="job col-md-4" style="padding-left: 0px; padding-right: 0px;">';
+                  job_card += '<div class="job-card">';
+                  job_card += '<div class="job-title">' + job.position_name + '</div>';
+                  job_card += '<div class="location-and-type d-flex align-items-center">';
+                  if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+                  job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+                  job_card += '</div>';
+                  var desc = jQuery(job.description)[8].innerText;
+                  //console.log(desc);
+                  job_card += '<div class="job-description">' + desc.substring(0, 200) + '</div>';
+                  job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+                  job_card += '</div>';
+                  job_card += '</div>';
+                  if (index == 2 || index == 5) {
+                    job_card += "</div>";
+                  }
+                })
+              }
+              jQuery('.jobs').html(job_card);
+              var total = res.count;
+              var prev_url, prev_page, next_url, next_page, paginate = '';
+              if (total <= 6) {
+                prev_url = '';
+                next_url = '';
+                paginate = '';
+              } else {
+                if (res.previous != null) {
+                  prev_page = ((res.previous.split('?')[1]).split('&')[0]).split('=')[1];
+                  prev_url = '<button class="prev page pagination-arrow active" page="' + prev_page + '">&#8592;</button>';
+                } else {
+                  prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+                }
+                if (res.next != null) {
+                  next_page = ((res.next.split('?')[1]).split('&')[0]).split('=')[1];
+                  next_url = '<button class="next page pagination-arrow active" page="' + next_page + '">&#8594;</button>';
+                } else {
+                  next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+                }
+                /*var j=1;
+                for(i=0; i<=total; i+=6){ 
+                  if(j==1){
+                    paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+                  }else{
+                    paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                  }
+                  j++;
+                  console.log(j);
+                }*/
+                var total_pages = parseInt(total / 6);
+                var extra_count = total % 6;
+                if (extra_count != 0) {
+                  total_pages = total_pages + 1;
+                }
+                paginate = rebuildPagination(1, total_pages);
+              }
+              var final_pagination = prev_url + paginate + next_url;
+              jQuery(".pagination").html(final_pagination);
+              if (total <= 6) {
+                jQuery(".pagination-text").html("");
+                jQuery(".pagination").addClass("empty").html("");
+              } else {
+                jQuery(".pagination-text").html("Showing 6 of " + total);
+                jQuery(".pagination").removeClass("empty");
+              }
+            }
+          });
+        }
+
+      })
+      jQuery(".btn-check").on('change', function () {
+        console.log(jQuery(this).val());
+        if (jQuery(this).val() == 'list') {
+          list_layout();
+        }
+        if (jQuery(this).val() == 'grid') {
+          grid_layout();
+        }
+      })
+    })
+
+    function rebuildPagination(currentPage, totalcount) {
+
+      var HTML = "";
+
+      // If there are only 6 pages or less in total, just display all pages without "..."
+      if (totalcount <= 6) {
+        for (i = 1; i <= totalcount; i++) {
+          HTML += addButton(i, currentPage);
+        }
+      }
+      // ELSE display with ...
+      else {
+
+        // Always print first page button
+        HTML += addButton("1", currentPage);
+
+        // Print "..." if currentPage is > 3
+        if (currentPage > 3) {
+          HTML += "...";
+        }
+
+        // special case where last page is selected...
+        // Without this special case, only 2 buttons would be shown after ... if you were on last page
+        if (currentPage == totalcount) {
+          HTML += addButton(currentPage - 2, currentPage);
+        }
+
+
+        // Print previous number button if currentPage > 2
+        if (currentPage > 2) {
+          HTML += addButton(parseInt(currentPage) - 1, currentPage);
+        }
+
+        //Print current page number button as long as it not the first or last page
+        if (currentPage != 1 && currentPage != totalcount) {
+          HTML += addButton(currentPage, currentPage);
+        }
+
+        //print next page number button if currentPage < lastPage - 1
+        if (currentPage < totalcount - 1) {
+          HTML += addButton(parseInt(currentPage) + 1, currentPage);
+        }
+
+        // special case where first page is selected...
+        // Without this special case, only 2 buttons would be shown before ... if you were on first page    
+        if (currentPage == 1) {
+          HTML += addButton(parseInt(currentPage) + 2, currentPage);
+        }
+
+        //print "..." if currentPage is < lastPage -2
+        if (currentPage < totalcount - 2) {
+          HTML += "...";
+        }
+
+        //Always print last page button if there is more than 1 page
+        if (totalcount > 1) {
+          HTML += addButton(totalcount, currentPage);
+        }
+      }
+      //
+      // HTML variable contains all the above buttons, 
+      //
+      return HTML;
+    }
+    //
+    // We are going to create a button, the HTML is a string that is returned
+    //
+    function addButton(number, currentPage) {
+      var HTML = "<button ";
+
+      //
+      // If we are creating a button that is current page, then add yellow style
+      //
+      if (number == currentPage) {
+        HTML += " class='page pagination-page current active-page'  ";
+      } else {
+        HTML += " class='page pagination-page'  ";
+      }
+
+      //Add click event
+      HTML += " page='" + number + "'>";
+
+      // Add button number
+      HTML += number;
+
+      // add closing button
+      HTML += "</button>";
+
+      // return string
+      return HTML;
+    }
+    function list_layout() {
+      const manatal_data = JSON.parse(document.getElementById("manatal_data").text)
+      var page_num = jQuery(".page.current").attr("page");
+      var country = jQuery("#countries").val();
+      var position = jQuery("#roles").val();
+      var layout = jQuery("input[name='btnradio']:checked").val();
+      var search = jQuery(".keyword-search").val();
+      if (page_num == undefined) {
+        page_num = '';
+      }
+      jQuery.ajax({
+        url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page=' + page_num + '&page_size=6',
+        method: 'GET',
+        success: function (res) {
+          var job_type = '';
+          var job_card = '';
+          console.log(res);
+
+          jQuery.each(res.results, function (index, job) {
+            job_card += '<div class="job job-card-list mt-2"><div class="row">';
+            job_card += '<div class="col-md-5 mt-4 left-box">';
+            job_card += '<div class="job-title job-title-list">' + job.position_name + '</div>';
+            job_card += '<div class="location-and-type d-flex align-items-center">';
+            if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+            job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+            job_card += '</div></div>';
+            job_card += '<div class="right-box col-md-7 mt-4 mb-4">';
+            var desc = jQuery(job.description)[8].innerText;
+            //console.log(desc);
+            job_card += '<div class="job-description mb-4">' + desc.substring(0, 200) + '</div>';
+            job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+            job_card += '</div>';
+            job_card += '</div></div>';
+          })
+
+
+
+          jQuery('.jobs').html(job_card);
+          var total = res.count;
+          var prev_url, prev_page, next_url, next_page, paginate = '';
+          if (total > 6) {
+            if (res.previous != null) {
+              prev_page = ((res.previous.split('?')[1]).split('&')[1]).split('=')[1];
+              prev_url = '<button class="prev page pagination-arrow active" page="' + prev_page + '">&#8592;</button>';
+            } else {
+              prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+            }
+            if (res.next != null) {
+              next_page = ((res.next.split('?')[1]).split('&')[1]).split('=')[1];
+              next_url = '<button class="next pagination-arrow page active" page="' + next_page + '">&#8594;</button>';
+            } else {
+              next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+            }
+            if (page_num != '') {
+              /*var j=1;
+              for(i=0; i<=total; i+=6){ 
+                if(j==page_num){
+                  paginate += '<button class="page pagination-page current active-page" page="'+j+'">'+j+'</button>';
+                }else{
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                }
+                j++;
+                console.log(j);
+              }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(page_num, total_pages);
+              var final_pagination = prev_url + paginate + next_url;
+              jQuery(".pagination").html(final_pagination);
+              if (page_num == 1) {
+                jQuery(".pagination-text").html("Showing 6 of " + total);
+              } else {
+                jQuery(".pagination-text").html("Showing " + (6 * (page_num - 1) + 1) + " to " + (6 * page_num) + " of " + total);
+              }
+            } else {
+              /*var j=1;
+              for(i=0; i<=total; i+=6){
+               if(j==1){
+                  paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+                }else{
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                }
+                j++;
+                console.log(j);
+              }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(1, total_pages);
+              var final_pagination = prev_url + paginate + next_url;
+              jQuery(".pagination").html(final_pagination);
+              jQuery(".pagination-text").html("Showing 6 of " + total);
+            }
+          } else {
+            jQuery(".pagination").addClass("empty").html("");
+            jQuery(".pagination-text").html("");
+          }
+        }
+      });
+    }
+
+    function grid_layout() {
+      const manatal_data = JSON.parse(document.getElementById("manatal_data").text)
+      var page_num = jQuery(".page.current").attr("page");
+      var country = jQuery("#countries").val();
+      var position = jQuery("#roles").val();
+      var layout = jQuery("input[name='btnradio']:checked").val();
+      var search = jQuery(".keyword-search").val();
+      if (page_num == undefined) {
+        page_num = '';
+      }
+
+      jQuery.ajax({
+        url: 'https://api.manatal.com/open/v3/career-page/vertis-digital/jobs/?search=' + search + '&position_name__icontains=' + position + '&country__icontains=' + country + '&page=' + page_num + '&page_size=6',
+        method: 'GET',
+        success: function (res) {
+          var job_type = '';
+          var job_card = '';
+          console.log(res);
+
+
+          jQuery.each(res.results, function (index, job) {
+            if (index == 0 || index == 3) {
+              job_card += '<div class="row">';
+            }
+            job_card += '<div class="job col-md-4" style="padding-left: 0px; padding-right: 0px;">';
+            job_card += '<div class="job-card">';
+            job_card += '<div class="job-title">' + job.position_name + '</div>';
+            job_card += '<div class="location-and-type d-flex align-items-center">';
+            if (job.contract_type == 'full_time') { job_type = 'Full Time'; } else { job_type = 'Full Time'; }
+            job_card += '<span class="location job-location"><img src="' + manatal_data.location_image + '" alt="Location Icon">' + job.country + '</span><span class="type job-type"><img src="' + manatal_data.time_image + '" alt="Time Icon">' + job_type + '</span>';
+            job_card += '</div>';
+            var desc = jQuery(job.description)[8].innerText;
+            //console.log(desc);
+            job_card += '<div class="job-description">' + desc.substring(0, 200) + '</div>';
+            job_card += '<div class="apply-button"><a href="https://www.careers-page.com/vertis-digital/job/' + job.hash + '" target="_blank" class="apply-now-btn"><span class="apply-now-text">Apply Now </span><span class="apply-now-btn-icon"><img src="' + manatal_data.arrow_icon + '" alt="Arrow Icon"/></span></a></div>';
+            job_card += '</div>';
+            job_card += '</div>';
+            if (index == 2 || index == 5) {
+              job_card += "</div>";
+            }
+          })
+
+
+
+          jQuery('.jobs').html(job_card);
+          var total = res.count;
+          var prev_url, prev_page, next_url, next_page, paginate = '';
+          if (total > 6) {
+            if (res.previous != null) {
+              prev_page = ((res.previous.split('?')[1]).split('&')[1]).split('=')[1];
+              prev_url = '<button class="prev page pagination-arrow active" page="' + prev_page + '">&#8592;</button>';
+            } else {
+              prev_url = '<button class="prev pagination-arrow inactive">&#8592;</button>';
+            }
+            if (res.next != null) {
+              next_page = ((res.next.split('?')[1]).split('&')[1]).split('=')[1];
+              next_url = '<button class="next pagination-arrow page active" page="' + next_page + '">&#8594;</button>';
+            } else {
+              next_url = '<button class="next pagination-arrow inactive">&#8594;</button>';
+            }
+            if (page_num != '') {
+              /*var j=1;
+              for(i=0; i<=total; i+=6){ 
+                if(j==page_num){
+                  paginate += '<button class="page pagination-page current active-page" page="'+j+'">'+j+'</button>';
+                }else{
+                  paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                }
+                j++;
+                console.log(j);
+              }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(page_num, total_pages);
+              var final_pagination = prev_url + paginate + next_url;
+              jQuery(".pagination").html(final_pagination);
+              if (page_num == 1) {
+                jQuery(".pagination-text").html("Showing 6 of " + total);
+              } else {
+                jQuery(".pagination-text").html("Showing " + (6 * (page_num - 1) + 1) + " to " + (6 * page_num) + " of " + total);
+              }
+            } else {
+              /* var j=1;
+               for(i=0; i<=total; i+=6){
+                if(j==1){
+                   paginate += '<button class="page pagination-page active-page current" page="1">1</button>';
+                 }else{
+                   paginate += '<button class="page pagination-page" page="'+j+'">'+j+'</button>';
+                 }
+                 j++;
+                 console.log(j);
+               }*/
+              var total_pages = parseInt(total / 6);
+              var extra_count = total % 6;
+              if (extra_count != 0) {
+                total_pages = total_pages + 1;
+              }
+              paginate = rebuildPagination(1, total_pages);
+              var final_pagination = prev_url + paginate + next_url;
+              jQuery(".pagination").html(final_pagination);
+              jQuery(".pagination-text").html("Showing 6 of " + total);
+            }
+          } else {
+            jQuery(".pagination").addClass("empty").html("");
+            jQuery(".pagination-text").html("");
+          }
+        }
+      });
+    }
+  </script>
 
 </body>
 
