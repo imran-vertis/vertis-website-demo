@@ -1,30 +1,16 @@
-@font-face {
-    font-display: swap;
-    font-family: BricolageGrotesque;
-    font-stretch: 75% 125%;
-    font-style: normal;
-    font-weight: 100 900;
-    src: url(/fonts/BricolageGrotesque-Variable.ttf?175002216ea0536c7b5d2ffae6b3d832) format("truetype")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 100 900;
-    src: url(/fonts/Inter-Variable.ttf?e05c5f3d1fa6a3893d84c1eef4e89951) format("truetype")
-}
+/* Import Inter and Bricolage Grotesque from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900&family=Bricolage+Grotesque:opsz,wght@10..48,100..900&display=swap');
 
 :root {
-    --font-family-title: BricolageGrotesque, sans-serif;
-    --font-family-body: Inter, sans-serif
+    --font-family-title: "Bricolage Grotesque", sans-serif;
+    --font-family-body: "Inter", sans-serif;
 }
 
 body {
     -ms-scroll-chaining: none;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: BricolageGrotesque, sans-serif;
+    font-family: var(--font-family-title);
     margin: 0;
     overflow-x: hidden;
     overscroll-behavior: none;
@@ -35,7 +21,7 @@ body {
 
 h5,
 h6 {
-    font-family: Inter, sans-serif
+    font-family: var(--font-family-body);
 }
 
 h6 {
@@ -46,7 +32,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: BricolageGrotesque, sans-serif
+    font-family: var(--font-family-title);
 }
 
 h2 {
@@ -153,7 +139,7 @@ h2 {
 
     .headline {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D3, 48px);
         font-style: normal;
         font-weight: 400;
@@ -259,7 +245,7 @@ h2 {
 
     .headline {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D2, 64px);
         font-style: normal;
         font-weight: 400;
@@ -365,7 +351,7 @@ h2 {
 
     .headline {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D1, 96px);
         font-style: normal;
         font-weight: 400;
@@ -1106,7 +1092,7 @@ header .nav-item.careers-link {
 
     .contact-heading {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H4, 28px);
         font-style: normal;
         font-weight: 400;
@@ -1133,7 +1119,7 @@ header .nav-item.careers-link {
 
     .contact-heading {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -1160,7 +1146,7 @@ header .nav-item.careers-link {
 
     .contact-heading {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -1349,7 +1335,7 @@ input::placeholder {
 
     .testimonials-dark .testimonial-description {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H4, 28px);
         font-style: normal;
         font-weight: 400;
@@ -1376,7 +1362,7 @@ input::placeholder {
 
     .testimonials-dark .testimonial-description {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: BricolageGrotesque, sans-serif;
+        font-family: var(--font-family-title);
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -1403,7 +1389,7 @@ input::placeholder {
 
     .testimonials-dark .testimonial-description {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -1565,7 +1551,7 @@ input::placeholder {
 
     .testimonial-description {
         color: var(--Colours-Text-text-white, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H4, 28px);
         font-style: normal;
         font-weight: 400;
@@ -1592,7 +1578,7 @@ input::placeholder {
 
     .testimonial-description {
         color: var(--Colours-Text-text-white, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -1619,7 +1605,7 @@ input::placeholder {
 
     .testimonial-description {
         color: var(--Colours-Text-text-white, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -1944,7 +1930,7 @@ input::placeholder {
 .about-page.about-section .metric-label,
 .homepage.about-section .metric-label {
     color: var(--colours-text-text-secondary-600, #797979);
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family-body);
     font-size: var(--font-size-P1, 16px);
     font-style: normal;
     font-weight: 400;
@@ -2112,7 +2098,7 @@ input::placeholder {
     .news-description,
     .news-title-text {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-style: normal;
         font-weight: 400
     }
@@ -2166,7 +2152,7 @@ input::placeholder {
 
     .news-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -2192,7 +2178,7 @@ input::placeholder {
 
     .news-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -2234,7 +2220,7 @@ input::placeholder {
     -webkit-box-orient: vertical;
     color: var(--colours-text-text-primary-900, #242424);
     display: -webkit-box;
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H4, 28px);
     line-height: var(--font-line-height-H4, 36px);
     overflow: hidden;
@@ -2263,7 +2249,7 @@ input::placeholder {
 .learn-more {
     -webkit-text-decoration-skip: ink;
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H6, 20px);
     font-style: normal;
     font-weight: 400;
@@ -2478,7 +2464,8 @@ input::placeholder {
 
     .tile-description {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: Inter, sans-serif;
+        font-family: var(--font-family-body);
+        ;
         font-size: var(--font-size-P1, 16px);
         letter-spacing: .32px;
         line-height: var(--font-line-height-P1, 24px);
@@ -2660,7 +2647,7 @@ input::placeholder {
 
 .project-content {
     color: var(--Base-white, #fff);
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family-body);
     font-size: var(--font-size-P1, 16px);
     font-style: normal;
     font-weight: 400;
@@ -2744,7 +2731,7 @@ input::placeholder {
 
     .award-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H4, 28px);
         font-style: normal;
         font-weight: 400;
@@ -2770,7 +2757,7 @@ input::placeholder {
 
     .award-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -2797,7 +2784,7 @@ input::placeholder {
 
     .award-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -2829,7 +2816,7 @@ input::placeholder {
 
 .award-title {
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H4, 28px);
     line-height: var(--font-line-height-H4, 36px)
 }
@@ -2869,7 +2856,7 @@ input::placeholder {
 
     .office-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H4, 28px);
         font-style: normal;
         font-weight: 400;
@@ -2896,7 +2883,7 @@ input::placeholder {
 
     .office-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 400;
@@ -2923,7 +2910,7 @@ input::placeholder {
 
     .office-description {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 400;
@@ -2954,7 +2941,7 @@ input::placeholder {
 
 .office-country {
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H5, 24px);
     line-height: var(--font-line-height-H5, 32px)
 }
@@ -3081,7 +3068,7 @@ input::placeholder {
 }
 
 .card-title {
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H5, 24px);
     line-height: var(--font-line-height-H5, 32px)
 }
@@ -3102,7 +3089,7 @@ input::placeholder {
 
 .card-subtitle {
     color: var(--colours-text-text-secondary-600, #797979);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H6, 20px);
     font-style: normal;
     font-weight: 400;
@@ -3206,7 +3193,7 @@ input::placeholder {
 
 .heading-white {
     color: var(--colours-text-text-primary-900, #fff);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H2, 36px);
     font-style: normal;
     font-weight: 600;
@@ -3286,7 +3273,7 @@ input::placeholder {
 
 .flip-card-front {
     background-color: #fff;
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H4, 28px);
     line-height: var(--font-line-height-H4, 36px)
 }
@@ -3318,7 +3305,7 @@ input::placeholder {
 @media (max-width:767px) {
     .top-section.about .header-section h2 {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D3, 48px);
         font-style: normal;
         font-weight: 400;
@@ -3347,7 +3334,7 @@ input::placeholder {
 @media (min-width:768px) and (max-width:991px) {
     .top-section.about .header-section h2 {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D2, 64px);
         font-style: normal;
         font-weight: 400;
@@ -3376,7 +3363,7 @@ input::placeholder {
 @media (min-width:992px) {
     .top-section.about .header-section h2 {
         color: var(--Colours-Text-text-white, #fff);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D1, 96px);
         font-style: normal;
         font-weight: 400;
@@ -3523,7 +3510,7 @@ input::placeholder {
 
 .heading-black {
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H2, 36px);
     font-style: normal;
     font-weight: 600;
@@ -4348,7 +4335,7 @@ input::placeholder {
     border-radius: 50px;
     color: #242424;
     cursor: pointer;
-    font-family: BricolageGrotesque, sans-serif;
+    font-family: var(--font-family-title);
     font-size: 20px;
     font-weight: 400;
     letter-spacing: .8px;
@@ -4401,7 +4388,7 @@ input::placeholder {
     border-radius: 50px;
     color: #242424;
     cursor: pointer;
-    font-family: BricolageGrotesque, sans-serif;
+    font-family: var(--font-family-title);
     font-size: 20px;
     font-weight: 400;
     letter-spacing: .8px;
@@ -4454,7 +4441,7 @@ input::placeholder {
 
 .feature-work-cards.card-grid.container .card-title {
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H2, 36px);
     font-style: normal;
     font-weight: 500;
@@ -4677,7 +4664,7 @@ input::placeholder {
 
     .display-4 {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D2, 64px);
         font-style: normal;
         font-weight: 400;
@@ -4717,7 +4704,7 @@ input::placeholder {
 
     .display-4 {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D2, 64px);
         font-style: normal;
         font-weight: 400;
@@ -4757,7 +4744,7 @@ input::placeholder {
 
     .display-4 {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D1, 96px);
         font-style: normal;
         font-weight: 400;
@@ -4782,7 +4769,7 @@ input::placeholder {
 
 .project-details h5 {
     color: var(--Secondary-300, #1ce783);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H6, 20px);
     font-style: normal;
     font-weight: 600;
@@ -4933,7 +4920,7 @@ input::placeholder {
 
     .green-heading {
         color: var(--colours-text-text-primary-brand-300, #1ce783);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 700;
@@ -4961,7 +4948,7 @@ input::placeholder {
 
     .green-heading {
         color: var(--colours-text-text-primary-brand-300, #1ce783);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D3, 48px);
         font-style: normal;
         font-weight: 700;
@@ -4989,7 +4976,7 @@ input::placeholder {
 
     .green-heading {
         color: var(--colours-text-text-primary-brand-300, #1ce783);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-D2, 64px);
         font-style: normal;
         font-weight: 700;
@@ -5017,7 +5004,7 @@ input::placeholder {
 
     .other-works-section.individual-project .heading {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H3, 32px);
         font-style: normal;
         font-weight: 600;
@@ -5046,7 +5033,7 @@ input::placeholder {
 
     .other-works-section.individual-project .heading {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 600;
@@ -5075,7 +5062,7 @@ input::placeholder {
 
     .other-works-section.individual-project .heading {
         color: var(--colours-text-text-primary-900, #242424);
-        font-family: var(--font-family-title, "BricolageGrotesque");
+        font-family: var(--font-family-title, "" Bricolage Grotesque"");
         font-size: var(--font-size-H2, 36px);
         font-style: normal;
         font-weight: 600;
@@ -5117,7 +5104,7 @@ input::placeholder {
 
 .other-works-section.individual-project .card-title {
     color: var(--colours-text-text-primary-900, #242424);
-    font-family: var(--font-family-title, "BricolageGrotesque");
+    font-family: var(--font-family-title, "" Bricolage Grotesque"");
     font-size: var(--font-size-H3, 32px);
     font-style: normal;
     font-weight: 500;
