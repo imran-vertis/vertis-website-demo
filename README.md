@@ -12,6 +12,12 @@ News Page: https://imran-vertis.github.io/vertis-website-demo/pages/news/index.h
 
 Career Page: https://imran-vertis.github.io/vertis-website-demo/pages/career/index.html
 
+Vertis Experience Page: https://imran-vertis.github.io/vertis-website-demo/pages/vertis-experience/index.html
+
+Vertis Technology Page: https://imran-vertis.github.io/vertis-website-demo/pages/vertis-technology/index.html
+
+Vertis Solutions Page: https://imran-vertis.github.io/vertis-website-demo/pages/vertis-solutions/index.html
+
 Individual Article Page: https://imran-vertis.github.io/vertis-website-demo/pages/individual-article/index.html
 
 Individual Project Page: https://imran-vertis.github.io/vertis-website-demo/pages/individual-project/index.html
